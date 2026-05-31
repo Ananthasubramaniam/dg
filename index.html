@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dessert Groove | Small Batch Soul</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&amp;family=Source+Sans+3:wght@400;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-container": "#d4b996",
+                    "tertiary-container": "#d6b896",
+                    "primary-fixed": "#fbdeb9",
+                    "on-primary": "#ffffff",
+                    "background": "#fef9f1",
+                    "error": "#ba1a1a",
+                    "on-error-container": "#93000a",
+                    "inverse-primary": "#dec29f",
+                    "inverse-surface": "#32302b",
+                    "on-secondary-fixed": "#2c1600",
+                    "primary": "#705b3e",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-fixed": "#281803",
+                    "surface-container-highest": "#e7e2da",
+                    "on-background": "#1d1c17",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed": "#271903",
+                    "tertiary": "#715a3e",
+                    "on-secondary-fixed-variant": "#673d07",
+                    "on-surface-variant": "#4d463c",
+                    "on-primary-container": "#5c492d",
+                    "surface-container": "#f2ede5",
+                    "secondary-fixed-dim": "#f8ba7b",
+                    "on-tertiary-fixed-variant": "#584329",
+                    "on-error": "#ffffff",
+                    "surface-container-high": "#ece8e0",
+                    "surface": "#fef9f1",
+                    "surface-bright": "#fef9f1",
+                    "secondary-fixed": "#ffdcbd",
+                    "tertiary-fixed": "#fdddb9",
+                    "outline": "#7f766b",
+                    "on-surface": "#1d1c17",
+                    "inverse-on-surface": "#f5f0e8",
+                    "surface-dim": "#ded9d2",
+                    "tertiary-fixed-dim": "#e0c29f",
+                    "surface-variant": "#e7e2da",
+                    "secondary": "#83541f",
+                    "surface-tint": "#705b3e",
+                    "on-tertiary": "#ffffff",
+                    "outline-variant": "#d0c5b8",
+                    "primary-fixed-dim": "#dec29f",
+                    "on-secondary-container": "#794c17",
+                    "on-tertiary-container": "#5e482d",
+                    "secondary-container": "#fec080",
+                    "on-primary-fixed-variant": "#564428",
+                    "surface-container-low": "#f8f3eb"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "sm": "12px",
+                    "md": "24px",
+                    "margin": "32px",
+                    "lg": "48px",
+                    "xs": "4px",
+                    "xl": "80px",
+                    "gutter": "24px",
+                    "margin-mobile": "20px",
+                    "section-gap": "120px",
+                    "margin-desktop": "64px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Playfair Display"],
+                    "display-lg-mobile": ["Playfair Display"],
+                    "body-md": ["Source Sans 3"],
+                    "headline-md": ["Playfair Display"],
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "body-lg": ["Source Sans 3"],
+                    "label-md": ["Source Sans 3"],
+                    "headline-lg": ["Playfair Display"]
+            },
+            "fontSize": {
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "display-lg-mobile": ["36px", {"lineHeight": "44px", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #fef9f1;
+            color: #1d1c17;
+            overflow-x: hidden;
+            cursor: none;
+        }
+
+        .custom-cursor {
+            width: 20px;
+            height: 20px;
+            border: 1px solid #705b3e;
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s ease-out;
+        }
+
+        .custom-cursor-dot {
+            width: 4px;
+            height: 4px;
+            background-color: #705b3e;
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        .parallax-layer {
+            will-change: transform;
+        }
+
+        .mask-text {
+            background-image: url('https://lh3.googleusercontent.com/aida/ADBb0uhv2EnGYGFBMyoGXs6ByqlHGcbM5fimTJNwdfBsVJPXzwYfcwkQLmrhpeymHET2Grb1VvRQpT6vhOVMOHfzYMzLYDJY3vOZ8leCwf-HB0CUiQKeshk6XJsJGoxLY3fv9Vt6RsZzkA5lxOWKiHNqiADx9duBGQ-KJv50CCvt3ZQgluEZ8VaKePfMJKH8Gwg_JJjtOUPSiBarATd9njzBY0lCo8zuDTcR5135bnD2hFFu7b4-GIxizaZChNhc');
+            background-size: cover;
+            background-position: center;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-attachment: fixed;
+        }
+
+        .vertical-ticker {
+            writing-mode: vertical-rl;
+            animation: ticker 20s linear infinite;
+        }
+
+        @keyframes ticker {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-50%); }
+        }
+
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(2deg); }
+        }
+
+        .whatsapp-tag {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md antialiased selection:bg-primary-fixed selection:text-on-primary-fixed" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBMZPp6dTuCDbvFPzuoh8UfJuW-Q71L-TYG0JAX8n_bIc3yXW0L1ZueXyVU_4HmzY1C83F6ggwPaCyBNYXbXQw45hHqPjpFc3ykJCJprD8aZ8-uRDhWtQnFABwzZwdbZ8n5LoNeWh59qGWXnZgpqIf1MaCToY3Y8J-fMccIVPMs5FVSZgto5paJCa11Ua56E9prq9i53RSlxUOcJ1ozvJz4BChQ1TdpZRYX7M3_-OZo1uwz7uLUjAJKScSoKdcGwF3AJKKd7mLiWWIc'); background-attachment: fixed; background-size: cover; background-position: center; background-repeat: no-repeat; background-color: #fef9f1; cursor: none; overflow-x: hidden;">
+<div class="custom-cursor hidden md:block" id="cursor"></div>
+<div class="custom-cursor-dot hidden md:block" id="cursor-dot"></div>
+<!-- TopNavBar Component -->
+<header class="fixed top-0 left-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-outline-variant/30 px-margin py-md">
+<div class="max-w-[1280px] mx-auto flex justify-between items-center">
+<div class="font-display-lg text-display-lg italic tracking-tighter text-primary">
+            Dessert Groove
+        </div>
+<nav class="hidden md:flex gap-12 items-center">
+<a class="font-body-lg text-body-lg text-on-surface-variant hover:text-secondary hover:scale-105 transition-transform duration-300" href="#">Curation</a>
+<a class="font-body-lg text-body-lg text-on-surface-variant hover:text-secondary hover:scale-105 transition-transform duration-300" href="#">Artisans</a>
+<a class="text-secondary font-bold border-b-2 border-secondary pb-1 font-body-lg text-body-lg hover:scale-105 transition-transform duration-300" href="#">The Gallery</a>
+</nav>
+<button class="bg-secondary text-on-secondary px-8 py-3 rounded-full font-label-md text-label-md uppercase tracking-widest transition-transform hover:scale-105 active:scale-95 shadow-sm">
+            Order via WhatsApp
+        </button>
+</div>
+</header>
+<!-- Striking Accent WhatsApp Tag -->
+<a class="fixed right-0 top-1/2 -translate-y-1/2 z-50 bg-secondary-container text-on-secondary-container py-8 px-4 rounded-l-xl shadow-2xl hover:pr-8 transition-all duration-300 group" href="https://wa.me/#">
+<div class="whatsapp-tag font-label-md text-label-md font-bold uppercase tracking-[0.2em] whitespace-nowrap">
+        Order via WhatsApp
+    </div>
+<span class="material-symbols-outlined mt-4 group-hover:rotate-12 transition-transform">chat</span>
+</a>
+<!-- Main Content Canvas -->
+<main class="relative overflow-hidden pt-32" id="main-canvas">
+<!-- Section 1: THE HERO (Exhibition Entrance) -->
+<section class="h-[calc(100vh-128px)] w-full flex items-center justify-center relative overflow-hidden px-margin-mobile md:px-margin-desktop">
+<div class="absolute inset-0 z-0 opacity-40 parallax-layer" data-speed="0.2">
+<div class="w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-surface-container-high to-surface"></div>
+</div>
+<div class="relative z-10 text-center select-none">
+<h1 class="mask-text font-display-lg text-[12vw] md:text-[18vw] leading-none tracking-tighter uppercase font-black opacity-90 transition-all duration-500 hover:scale-[1.02] cursor-default">
+                THE GROOVE
+            </h1>
+<p class="mt-8 font-headline-md text-headline-md text-secondary italic parallax-layer" data-speed="0.5">
+                Small Batch Soul. High Fashion Flavor.
+            </p>
+</div>
+<!-- Floating Decorative Elements -->
+<div class="absolute top-1/4 right-10 w-32 h-32 bg-primary-container/30 rounded-full blur-3xl animate-pulse"></div>
+<div class="absolute bottom-1/4 left-1/4 w-64 h-64 bg-secondary-container/20 rounded-full blur-[100px]"></div>
+</section>
+<!-- Section 2: THE FLOATING COLLECTION (Broken Grid Menu) -->
+<section class="min-h-[200vh] w-full relative flex flex-col items-center py-section-gap">
+<div class="sticky top-40 left-0 w-full px-margin-desktop pointer-events-none z-0">
+<h2 class="font-display-lg text-[12vw] text-primary opacity-5 uppercase select-none">THE COLLECTION</h2>
+</div>
+<!-- Floating Item 1: Brownies -->
+<div class="parallax-layer absolute left-[10%] top-[15%] group cursor-pointer z-10" data-speed="0.8">
+<div class="relative">
+<img alt="" class="w-72 h-96 object-cover shadow-2xl transition-transform duration-700 group-hover:scale-110 grayscale hover:grayscale-0 rounded-lg" src="https://lh3.googleusercontent.com/aida/ADBb0uiFWUxX89YfBkn1Ivs9fW4nNE0Fu4Ml5xtZrOvMwdeqsxOxGlRK4plzHv0AEiQByiq1L6Vse7Y_G9j0yi6fsz7mxY8MSWKI2fLF5g_l0BB4tjY3mM7g4yXnEkXl6q0KldZE_VDo0uvSN6LfD1k6jdDEaan4YYxYB0Xp3zK2R5VxUBV-Qcnu8wHIqgbRYz9QNnUJfVSr3xpupVw2KTANCxGISn7W11J-KPTwWqmBLT8mx-4GKrDj1D9q7iiU"/>
+<div class="absolute -bottom-12 -right-12 bg-surface-container-highest p-6 shadow-xl border border-primary/20 backdrop-blur-md rounded-lg">
+<span class="font-label-md text-label-md text-primary block mb-2">01. THE CRACKLE</span>
+<h3 class="font-headline-md text-headline-md leading-none text-on-surface">Sea Salt<br/>Brownies</h3>
+</div>
+</div>
+</div>
+<!-- Floating Item 2: The Jars -->
+<div class="parallax-layer absolute right-[15%] top-[40%] group cursor-pointer z-10" data-speed="0.4">
+<div class="relative">
+<img alt="" class="w-80 h-80 rounded-full object-cover shadow-2xl border-4 border-primary-container/30 transition-transform duration-1000 group-hover:rotate-12" src="https://lh3.googleusercontent.com/aida/ADBb0ujXK1CZ2XGOn3ch3YabqhJoG9_-4rxzPE3DxU6y7D81FFpTMhTHEoK1dW9x83T4uu-pkB19XR9CuUFimYXdbkiS0WGuJXg4tPiOpKkv7yRWxIQmA44I_gff5unmNla1yKF18rTVYd68UR3tTn7JaGJI7iJrxg3VuSRJbdVFuxlK36YrgDPxZbAG1H0uwK9WVVnpi-c6Y0hSW43XRvyDEzu2_3uEQAOdbfP_EyHC-L5G9mvr40FI6dz4rGM"/>
+<div class="absolute -top-8 -left-8 bg-surface p-4 border-l-4 border-primary shadow-lg rounded-r-lg">
+<span class="font-label-md text-label-md text-on-surface-variant block mb-1 uppercase tracking-tighter">Limited Series</span>
+<p class="font-body-md text-body-md italic text-secondary">Layers of Rhythm</p>
+</div>
+</div>
+</div>
+<!-- Floating Item 3: The Masterpiece -->
+<div class="parallax-layer absolute left-[20%] top-[70%] group z-10" data-speed="1.2">
+<div class="relative max-w-2xl">
+<img alt="" class="w-full aspect-[1.5] object-cover shadow-[0_50px_100px_-20px_rgba(112,91,62,0.2)] transition-all duration-700 group-hover:brightness-110 rounded-xl" src="https://lh3.googleusercontent.com/aida/ADBb0uhv2EnGYGFBMyoGXs6ByqlHGcbM5fimTJNwdfBsVJPXzwYfcwkQLmrhpeymHET2Grb1VvRQpT6vhOVMOHfzYMzLYDJY3vOZ8leCwf-HB0CUiQKeshk6XJsJGoxLY3fv9Vt6RsZzkA5lxOWKiHNqiADx9duBGQ-KJv50CCvt3ZQgluEZ8VaKePfMJKH8Gwg_JJjtOUPSiBarATd9njzBY0lCo8zuDTcR5135bnD2hFFu7b4-GIxizaZChNhc"/>
+<div class="mt-8 flex justify-between items-end">
+<div>
+<h3 class="font-display-lg text-display-lg-mobile text-on-surface leading-none">THE SIGNATURE</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-4 max-w-sm">A deep exploration of cocoa density and silk-light cream.</p>
+</div>
+<div class="text-right">
+<span class="font-display-lg text-display-lg-mobile text-primary">$85</span>
+<p class="font-label-md text-label-md uppercase tracking-[0.3em] opacity-50 text-on-surface">Reserve</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: THE SOUL (Ticker & Rotation) -->
+<section class="h-screen w-full flex items-center relative bg-surface-container-low overflow-hidden">
+<!-- Vertical Ticker Tape -->
+<div class="absolute left-0 top-0 h-[200%] w-24 border-r border-primary/10 flex flex-col bg-surface-container-lowest">
+<div class="vertical-ticker flex flex-col gap-12 py-12">
+<span class="font-label-md text-label-md text-primary/40 uppercase tracking-[0.5em] whitespace-nowrap">SMALL BATCH SOUL — SLOW BAKE PROCESS — HUMAN TOUCH — NO COMPROMISE — </span>
+<span class="font-label-md text-label-md text-primary/40 uppercase tracking-[0.5em] whitespace-nowrap">SMALL BATCH SOUL — SLOW BAKE PROCESS — HUMAN TOUCH — NO COMPROMISE — </span>
+</div>
+</div>
+<div class="ml-40 px-margin-desktop flex flex-col md:flex-row items-center gap-section-gap">
+<div class="relative w-64 h-64 flex-shrink-0">
+<!-- Rotating Circular Element -->
+<div class="absolute inset-0 border border-dashed border-primary/40 rounded-full animate-[spin_20s_linear_infinite]"></div>
+<div class="absolute inset-4 border border-primary/20 rounded-full animate-[spin_15s_linear_infinite_reverse]"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-6xl" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+<svg class="absolute inset-0 w-full h-full -rotate-90 pointer-events-none" viewbox="0 0 100 100">
+<path d="M 50, 50 m -40, 0 a 40,40 0 1,1 80,0 a 40,40 0 1,1 -80,0" fill="transparent" id="circlePath"></path>
+<text class="font-label-md text-[8px] fill-primary uppercase tracking-[0.4em]">
+<textpath href="#circlePath">ESTABLISHED IN THE KITCHEN OF THE HEART • BAKED WITH PATIENCE • </textpath>
+</text>
+</svg>
+</div>
+<div class="max-w-2xl">
+<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-8">Personal Soul</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                    We don't believe in the rush of the modern world. At Dessert Groove, each creation is a slow conversation between the ingredients and the maker. Our chocolate is tempered by hand, our sponges are whipped to the rhythm of the early morning, and our soul is folded into every batch.
+                </p>
+<div class="mt-12 flex gap-8">
+<div class="bg-surface-container-high p-6 border-l-4 border-secondary rounded-r-lg">
+<p class="font-display-lg text-display-lg-mobile text-primary leading-none">12</p>
+<p class="font-label-md text-label-md uppercase tracking-widest mt-2 text-on-surface">Hours of Resting</p>
+</div>
+<div class="bg-surface-container-high p-6 border-l-4 border-secondary rounded-r-lg">
+<p class="font-display-lg text-display-lg-mobile text-primary leading-none">01</p>
+<p class="font-label-md text-label-md uppercase tracking-widest mt-2 text-on-surface">Batch at a time</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer Component -->
+<footer class="bg-surface-container-lowest py-xl px-margin border-t border-outline-variant">
+<div class="max-w-[1280px] mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
+<div class="text-center md:text-left">
+<div class="font-display-lg text-display-lg text-primary mb-4">Dessert Groove</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-sm">Handcrafted in the Flour-Dust. A digital-first patisserie for the avant-garde palate.</p>
+</div>
+<nav class="flex flex-wrap justify-center gap-8">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">The Manifesto</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Wholesale Inquiry</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Privacy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Terms</a>
+</nav>
+<div class="text-on-surface-variant font-body-md text-body-md text-center md:text-right">
+<p>© 2024 Dessert Groove.</p>
+<p class="opacity-60 text-xs uppercase tracking-widest mt-1">Curated Excellence • Handcrafted Soul</p>
+</div>
+</div>
+</footer>
+</main>
+<script>
+    // Custom Cursor Logic
+    const cursor = document.getElementById('cursor');
+    const cursorDot = document.getElementById('cursor-dot');
+
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+        cursorDot.style.left = e.clientX + 'px';
+        cursorDot.style.top = e.clientY + 'px';
+    });
+
+    // Mouse-tracking Shadow & Tilt Interaction
+    const parallaxLayers = document.querySelectorAll('.parallax-layer');
+    const mainCanvas = document.getElementById('main-canvas');
+
+    document.addEventListener('mousemove', (e) => {
+        const mouseX = (e.clientX / window.innerWidth) - 0.5;
+        const mouseY = (e.clientY / window.innerHeight) - 0.5;
+
+        parallaxLayers.forEach(layer => {
+            const speed = layer.getAttribute('data-speed') || 1;
+            const x = mouseX * 80 * speed;
+            const y = mouseY * 80 * speed;
+            layer.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+            
+            // Subtle tilt for images
+            if(layer.querySelector('img')) {
+                const tiltX = mouseY * 15 * speed;
+                const tiltY = mouseX * -15 * speed;
+                layer.querySelector('img').style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale(1.02)`;
+            }
+        });
+    });
+
+    // Parallax scroll effect for mask text
+    window.addEventListener('scroll', () => {
+        const scroll = window.pageYOffset;
+        const maskText = document.querySelector('.mask-text');
+        if(maskText) {
+            maskText.style.backgroundPositionY = (scroll * 0.3) + 'px';
+        }
+    });
+
+    // Click interaction scale
+    document.addEventListener('mousedown', () => {
+        cursor.style.transform = 'scale(0.8)';
+        cursorDot.style.transform = 'scale(1.5)';
+    });
+    document.addEventListener('mouseup', () => {
+        cursor.style.transform = 'scale(1)';
+        cursorDot.style.transform = 'scale(1)';
+    });
+</script>
+</body></html>
