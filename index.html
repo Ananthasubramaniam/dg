@@ -1,380 +1,387 @@
 <!DOCTYPE html>
-
-<html class="scroll-smooth" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Dessert Groove | Small Batch Soul</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&amp;family=Source+Sans+3:wght@400;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
+<html class="scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Dessert Groove | Home-Style Cakes & Brownies in Pune</title>
+    <meta name="description" content="Dessert Groove is a home-style artisan bakery in Pune run by Subha Srihari. We bake delicious, small-batch chocolate cakes, sea salt brownies, cookies, and dessert jars, delivered fresh across Pune. Order via WhatsApp!"/>
+    
+    <!-- Google Fonts & Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600;1,700&family=Source+Sans+3:wght@300;400;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    
+    <script id="tailwind-config">
       tailwind.config = {
-        darkMode: "class",
         theme: {
           extend: {
-            "colors": {
-                    "primary-container": "#d4b996",
-                    "tertiary-container": "#d6b896",
-                    "primary-fixed": "#fbdeb9",
-                    "on-primary": "#ffffff",
-                    "background": "#fef9f1",
-                    "error": "#ba1a1a",
-                    "on-error-container": "#93000a",
-                    "inverse-primary": "#dec29f",
-                    "inverse-surface": "#32302b",
-                    "on-secondary-fixed": "#2c1600",
-                    "primary": "#705b3e",
-                    "error-container": "#ffdad6",
-                    "on-tertiary-fixed": "#281803",
-                    "surface-container-highest": "#e7e2da",
-                    "on-background": "#1d1c17",
-                    "surface-container-lowest": "#ffffff",
-                    "on-secondary": "#ffffff",
-                    "on-primary-fixed": "#271903",
-                    "tertiary": "#715a3e",
-                    "on-secondary-fixed-variant": "#673d07",
-                    "on-surface-variant": "#4d463c",
-                    "on-primary-container": "#5c492d",
-                    "surface-container": "#f2ede5",
-                    "secondary-fixed-dim": "#f8ba7b",
-                    "on-tertiary-fixed-variant": "#584329",
-                    "on-error": "#ffffff",
-                    "surface-container-high": "#ece8e0",
-                    "surface": "#fef9f1",
-                    "surface-bright": "#fef9f1",
-                    "secondary-fixed": "#ffdcbd",
-                    "tertiary-fixed": "#fdddb9",
-                    "outline": "#7f766b",
-                    "on-surface": "#1d1c17",
-                    "inverse-on-surface": "#f5f0e8",
-                    "surface-dim": "#ded9d2",
-                    "tertiary-fixed-dim": "#e0c29f",
-                    "surface-variant": "#e7e2da",
-                    "secondary": "#83541f",
-                    "surface-tint": "#705b3e",
-                    "on-tertiary": "#ffffff",
-                    "outline-variant": "#d0c5b8",
-                    "primary-fixed-dim": "#dec29f",
-                    "on-secondary-container": "#794c17",
-                    "on-tertiary-container": "#5e482d",
-                    "secondary-container": "#fec080",
-                    "on-primary-fixed-variant": "#564428",
-                    "surface-container-low": "#f8f3eb"
+            colors: {
+              'brand-cream': '#fdfaf6',
+              'brand-cream-dark': '#f5ecd8',
+              'brand-chocolate': '#3d2314',
+              'brand-chocolate-dark': '#231107',
+              'brand-caramel': '#92400e',
+              'brand-caramel-light': '#fef3c7',
+              'brand-text-dark': '#231107',
+              'brand-text-light': '#fdfaf6',
             },
-            "borderRadius": {
-                    "DEFAULT": "0.25rem",
-                    "lg": "0.5rem",
-                    "xl": "0.75rem",
-                    "full": "9999px"
-            },
-            "spacing": {
-                    "base": "8px",
-                    "sm": "12px",
-                    "md": "24px",
-                    "margin": "32px",
-                    "lg": "48px",
-                    "xs": "4px",
-                    "xl": "80px",
-                    "gutter": "24px",
-                    "margin-mobile": "20px",
-                    "section-gap": "120px",
-                    "margin-desktop": "64px"
-            },
-            "fontFamily": {
-                    "display-lg": ["Playfair Display"],
-                    "display-lg-mobile": ["Playfair Display"],
-                    "body-md": ["Source Sans 3"],
-                    "headline-md": ["Playfair Display"],
-                    "headline-lg-mobile": ["Playfair Display"],
-                    "body-lg": ["Source Sans 3"],
-                    "label-md": ["Source Sans 3"],
-                    "headline-lg": ["Playfair Display"]
-            },
-            "fontSize": {
-                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                    "display-lg-mobile": ["36px", {"lineHeight": "44px", "fontWeight": "700"}],
-                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
-                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
-                    "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
-                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
-                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
-                    "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "600"}]
+            fontFamily: {
+              serif: ['Playfair Display', 'serif'],
+              sans: ['Source Sans 3', 'sans-serif'],
             }
           },
         },
       }
     </script>
-<style>
+    <style>
         body {
-            background-color: #fef9f1;
-            color: #1d1c17;
-            overflow-x: hidden;
-            cursor: none;
+            background-color: #fdfaf6;
+            color: #231107;
+            font-family: 'Source Sans 3', sans-serif;
+            background-image: radial-gradient(rgba(61, 35, 20, 0.03) 1px, transparent 1px);
+            background-size: 24px 24px;
         }
 
-        .custom-cursor {
-            width: 20px;
-            height: 20px;
-            border: 1px solid #705b3e;
-            border-radius: 50%;
-            position: fixed;
-            pointer-events: none;
-            z-index: 9999;
-            transition: transform 0.1s ease-out;
+        .food-image-frame {
+            box-shadow: 15px 15px 0px #3d2314;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .custom-cursor-dot {
-            width: 4px;
-            height: 4px;
-            background-color: #705b3e;
-            border-radius: 50%;
-            position: fixed;
-            pointer-events: none;
-            z-index: 9999;
+        .food-image-frame:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 20px 20px 0px #92400e;
         }
 
-        .parallax-layer {
-            will-change: transform;
+        .menu-card {
+            border: 1px solid rgba(61, 35, 20, 0.15);
+            background: #fffdfb;
+            transition: all 0.3s ease;
         }
 
-        .mask-text {
-            background-image: url('https://lh3.googleusercontent.com/aida/ADBb0uhv2EnGYGFBMyoGXs6ByqlHGcbM5fimTJNwdfBsVJPXzwYfcwkQLmrhpeymHET2Grb1VvRQpT6vhOVMOHfzYMzLYDJY3vOZ8leCwf-HB0CUiQKeshk6XJsJGoxLY3fv9Vt6RsZzkA5lxOWKiHNqiADx9duBGQ-KJv50CCvt3ZQgluEZ8VaKePfMJKH8Gwg_JJjtOUPSiBarATd9njzBY0lCo8zuDTcR5135bnD2hFFu7b4-GIxizaZChNhc');
-            background-size: cover;
-            background-position: center;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-attachment: fixed;
-        }
-
-        .vertical-ticker {
-            writing-mode: vertical-rl;
-            animation: ticker 20s linear infinite;
-        }
-
-        @keyframes ticker {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(-50%); }
-        }
-
-        .float-animation {
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(2deg); }
-        }
-
-        .whatsapp-tag {
-            writing-mode: vertical-rl;
-            text-orientation: mixed;
-        }
-
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        .menu-card:hover {
+            border-color: #92400e;
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(61, 35, 20, 0.08);
         }
     </style>
 </head>
-<body class="font-body-md text-body-md antialiased selection:bg-primary-fixed selection:text-on-primary-fixed" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBMZPp6dTuCDbvFPzuoh8UfJuW-Q71L-TYG0JAX8n_bIc3yXW0L1ZueXyVU_4HmzY1C83F6ggwPaCyBNYXbXQw45hHqPjpFc3ykJCJprD8aZ8-uRDhWtQnFABwzZwdbZ8n5LoNeWh59qGWXnZgpqIf1MaCToY3Y8J-fMccIVPMs5FVSZgto5paJCa11Ua56E9prq9i53RSlxUOcJ1ozvJz4BChQ1TdpZRYX7M3_-OZo1uwz7uLUjAJKScSoKdcGwF3AJKKd7mLiWWIc'); background-attachment: fixed; background-size: cover; background-position: center; background-repeat: no-repeat; background-color: #fef9f1; cursor: none; overflow-x: hidden;">
-<div class="custom-cursor hidden md:block" id="cursor"></div>
-<div class="custom-cursor-dot hidden md:block" id="cursor-dot"></div>
-<!-- TopNavBar Component -->
-<header class="fixed top-0 left-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-outline-variant/30 px-margin py-md">
-<div class="max-w-[1280px] mx-auto flex justify-between items-center">
-<div class="font-display-lg text-display-lg italic tracking-tighter text-primary">
-            Dessert Groove
-        </div>
-<nav class="hidden md:flex gap-12 items-center">
-<a class="font-body-lg text-body-lg text-on-surface-variant hover:text-secondary hover:scale-105 transition-transform duration-300" href="#">Curation</a>
-<a class="font-body-lg text-body-lg text-on-surface-variant hover:text-secondary hover:scale-105 transition-transform duration-300" href="#">Artisans</a>
-<a class="text-secondary font-bold border-b-2 border-secondary pb-1 font-body-lg text-body-lg hover:scale-105 transition-transform duration-300" href="#">The Gallery</a>
-</nav>
-<button class="bg-secondary text-on-secondary px-8 py-3 rounded-full font-label-md text-label-md uppercase tracking-widest transition-transform hover:scale-105 active:scale-95 shadow-sm">
-            Order via WhatsApp
-        </button>
-</div>
-</header>
-<!-- Striking Accent WhatsApp Tag -->
-<a class="fixed right-0 top-1/2 -translate-y-1/2 z-50 bg-secondary-container text-on-secondary-container py-8 px-4 rounded-l-xl shadow-2xl hover:pr-8 transition-all duration-300 group" href="https://wa.me/#">
-<div class="whatsapp-tag font-label-md text-label-md font-bold uppercase tracking-[0.2em] whitespace-nowrap">
-        Order via WhatsApp
-    </div>
-<span class="material-symbols-outlined mt-4 group-hover:rotate-12 transition-transform">chat</span>
-</a>
-<!-- Main Content Canvas -->
-<main class="relative overflow-hidden pt-32" id="main-canvas">
-<!-- Section 1: THE HERO (Exhibition Entrance) -->
-<section class="h-[calc(100vh-128px)] w-full flex items-center justify-center relative overflow-hidden px-margin-mobile md:px-margin-desktop">
-<div class="absolute inset-0 z-0 opacity-40 parallax-layer" data-speed="0.2">
-<div class="w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-surface-container-high to-surface"></div>
-</div>
-<div class="relative z-10 text-center select-none">
-<h1 class="mask-text font-display-lg text-[12vw] md:text-[18vw] leading-none tracking-tighter uppercase font-black opacity-90 transition-all duration-500 hover:scale-[1.02] cursor-default">
-                THE GROOVE
-            </h1>
-<p class="mt-8 font-headline-md text-headline-md text-secondary italic parallax-layer" data-speed="0.5">
-                Small Batch Soul. High Fashion Flavor.
-            </p>
-</div>
-<!-- Floating Decorative Elements -->
-<div class="absolute top-1/4 right-10 w-32 h-32 bg-primary-container/30 rounded-full blur-3xl animate-pulse"></div>
-<div class="absolute bottom-1/4 left-1/4 w-64 h-64 bg-secondary-container/20 rounded-full blur-[100px]"></div>
-</section>
-<!-- Section 2: THE FLOATING COLLECTION (Broken Grid Menu) -->
-<section class="min-h-[200vh] w-full relative flex flex-col items-center py-section-gap">
-<div class="sticky top-40 left-0 w-full px-margin-desktop pointer-events-none z-0">
-<h2 class="font-display-lg text-[12vw] text-primary opacity-5 uppercase select-none">THE COLLECTION</h2>
-</div>
-<!-- Floating Item 1: Brownies -->
-<div class="parallax-layer absolute left-[10%] top-[15%] group cursor-pointer z-10" data-speed="0.8">
-<div class="relative">
-<img alt="" class="w-72 h-96 object-cover shadow-2xl transition-transform duration-700 group-hover:scale-110 grayscale hover:grayscale-0 rounded-lg" src="https://lh3.googleusercontent.com/aida/ADBb0uiFWUxX89YfBkn1Ivs9fW4nNE0Fu4Ml5xtZrOvMwdeqsxOxGlRK4plzHv0AEiQByiq1L6Vse7Y_G9j0yi6fsz7mxY8MSWKI2fLF5g_l0BB4tjY3mM7g4yXnEkXl6q0KldZE_VDo0uvSN6LfD1k6jdDEaan4YYxYB0Xp3zK2R5VxUBV-Qcnu8wHIqgbRYz9QNnUJfVSr3xpupVw2KTANCxGISn7W11J-KPTwWqmBLT8mx-4GKrDj1D9q7iiU"/>
-<div class="absolute -bottom-12 -right-12 bg-surface-container-highest p-6 shadow-xl border border-primary/20 backdrop-blur-md rounded-lg">
-<span class="font-label-md text-label-md text-primary block mb-2">01. THE CRACKLE</span>
-<h3 class="font-headline-md text-headline-md leading-none text-on-surface">Sea Salt<br/>Brownies</h3>
-</div>
-</div>
-</div>
-<!-- Floating Item 2: The Jars -->
-<div class="parallax-layer absolute right-[15%] top-[40%] group cursor-pointer z-10" data-speed="0.4">
-<div class="relative">
-<img alt="" class="w-80 h-80 rounded-full object-cover shadow-2xl border-4 border-primary-container/30 transition-transform duration-1000 group-hover:rotate-12" src="https://lh3.googleusercontent.com/aida/ADBb0ujXK1CZ2XGOn3ch3YabqhJoG9_-4rxzPE3DxU6y7D81FFpTMhTHEoK1dW9x83T4uu-pkB19XR9CuUFimYXdbkiS0WGuJXg4tPiOpKkv7yRWxIQmA44I_gff5unmNla1yKF18rTVYd68UR3tTn7JaGJI7iJrxg3VuSRJbdVFuxlK36YrgDPxZbAG1H0uwK9WVVnpi-c6Y0hSW43XRvyDEzu2_3uEQAOdbfP_EyHC-L5G9mvr40FI6dz4rGM"/>
-<div class="absolute -top-8 -left-8 bg-surface p-4 border-l-4 border-primary shadow-lg rounded-r-lg">
-<span class="font-label-md text-label-md text-on-surface-variant block mb-1 uppercase tracking-tighter">Limited Series</span>
-<p class="font-body-md text-body-md italic text-secondary">Layers of Rhythm</p>
-</div>
-</div>
-</div>
-<!-- Floating Item 3: The Masterpiece -->
-<div class="parallax-layer absolute left-[20%] top-[70%] group z-10" data-speed="1.2">
-<div class="relative max-w-2xl">
-<img alt="" class="w-full aspect-[1.5] object-cover shadow-[0_50px_100px_-20px_rgba(112,91,62,0.2)] transition-all duration-700 group-hover:brightness-110 rounded-xl" src="https://lh3.googleusercontent.com/aida/ADBb0uhv2EnGYGFBMyoGXs6ByqlHGcbM5fimTJNwdfBsVJPXzwYfcwkQLmrhpeymHET2Grb1VvRQpT6vhOVMOHfzYMzLYDJY3vOZ8leCwf-HB0CUiQKeshk6XJsJGoxLY3fv9Vt6RsZzkA5lxOWKiHNqiADx9duBGQ-KJv50CCvt3ZQgluEZ8VaKePfMJKH8Gwg_JJjtOUPSiBarATd9njzBY0lCo8zuDTcR5135bnD2hFFu7b4-GIxizaZChNhc"/>
-<div class="mt-8 flex justify-between items-end">
-<div>
-<h3 class="font-display-lg text-display-lg-mobile text-on-surface leading-none">THE SIGNATURE</h3>
-<p class="font-body-lg text-body-lg text-on-surface-variant mt-4 max-w-sm">A deep exploration of cocoa density and silk-light cream.</p>
-</div>
-<div class="text-right">
-<span class="font-display-lg text-display-lg-mobile text-primary">$85</span>
-<p class="font-label-md text-label-md uppercase tracking-[0.3em] opacity-50 text-on-surface">Reserve</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Section 3: THE SOUL (Ticker & Rotation) -->
-<section class="h-screen w-full flex items-center relative bg-surface-container-low overflow-hidden">
-<!-- Vertical Ticker Tape -->
-<div class="absolute left-0 top-0 h-[200%] w-24 border-r border-primary/10 flex flex-col bg-surface-container-lowest">
-<div class="vertical-ticker flex flex-col gap-12 py-12">
-<span class="font-label-md text-label-md text-primary/40 uppercase tracking-[0.5em] whitespace-nowrap">SMALL BATCH SOUL — SLOW BAKE PROCESS — HUMAN TOUCH — NO COMPROMISE — </span>
-<span class="font-label-md text-label-md text-primary/40 uppercase tracking-[0.5em] whitespace-nowrap">SMALL BATCH SOUL — SLOW BAKE PROCESS — HUMAN TOUCH — NO COMPROMISE — </span>
-</div>
-</div>
-<div class="ml-40 px-margin-desktop flex flex-col md:flex-row items-center gap-section-gap">
-<div class="relative w-64 h-64 flex-shrink-0">
-<!-- Rotating Circular Element -->
-<div class="absolute inset-0 border border-dashed border-primary/40 rounded-full animate-[spin_20s_linear_infinite]"></div>
-<div class="absolute inset-4 border border-primary/20 rounded-full animate-[spin_15s_linear_infinite_reverse]"></div>
-<div class="absolute inset-0 flex items-center justify-center">
-<span class="material-symbols-outlined text-primary text-6xl" style="font-variation-settings: 'FILL' 1;">favorite</span>
-</div>
-<svg class="absolute inset-0 w-full h-full -rotate-90 pointer-events-none" viewbox="0 0 100 100">
-<path d="M 50, 50 m -40, 0 a 40,40 0 1,1 80,0 a 40,40 0 1,1 -80,0" fill="transparent" id="circlePath"></path>
-<text class="font-label-md text-[8px] fill-primary uppercase tracking-[0.4em]">
-<textpath href="#circlePath">ESTABLISHED IN THE KITCHEN OF THE HEART • BAKED WITH PATIENCE • </textpath>
-</text>
-</svg>
-</div>
-<div class="max-w-2xl">
-<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-8">Personal Soul</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
-                    We don't believe in the rush of the modern world. At Dessert Groove, each creation is a slow conversation between the ingredients and the maker. Our chocolate is tempered by hand, our sponges are whipped to the rhythm of the early morning, and our soul is folded into every batch.
-                </p>
-<div class="mt-12 flex gap-8">
-<div class="bg-surface-container-high p-6 border-l-4 border-secondary rounded-r-lg">
-<p class="font-display-lg text-display-lg-mobile text-primary leading-none">12</p>
-<p class="font-label-md text-label-md uppercase tracking-widest mt-2 text-on-surface">Hours of Resting</p>
-</div>
-<div class="bg-surface-container-high p-6 border-l-4 border-secondary rounded-r-lg">
-<p class="font-display-lg text-display-lg-mobile text-primary leading-none">01</p>
-<p class="font-label-md text-label-md uppercase tracking-widest mt-2 text-on-surface">Batch at a time</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Footer Component -->
-<footer class="bg-surface-container-lowest py-xl px-margin border-t border-outline-variant">
-<div class="max-w-[1280px] mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
-<div class="text-center md:text-left">
-<div class="font-display-lg text-display-lg text-primary mb-4">Dessert Groove</div>
-<p class="font-body-md text-body-md text-on-surface-variant max-w-sm">Handcrafted in the Flour-Dust. A digital-first patisserie for the avant-garde palate.</p>
-</div>
-<nav class="flex flex-wrap justify-center gap-8">
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">The Manifesto</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Wholesale Inquiry</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Privacy</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Terms</a>
-</nav>
-<div class="text-on-surface-variant font-body-md text-body-md text-center md:text-right">
-<p>© 2024 Dessert Groove.</p>
-<p class="opacity-60 text-xs uppercase tracking-widest mt-1">Curated Excellence • Handcrafted Soul</p>
-</div>
-</div>
-</footer>
-</main>
-<script>
-    // Custom Cursor Logic
-    const cursor = document.getElementById('cursor');
-    const cursorDot = document.getElementById('cursor-dot');
+<body class="antialiased selection:bg-brand-caramel-light selection:text-brand-chocolate pb-24 md:pb-0">
 
-    document.addEventListener('mousemove', (e) => {
-        cursor.style.left = e.clientX + 'px';
-        cursor.style.top = e.clientY + 'px';
-        cursorDot.style.left = e.clientX + 'px';
-        cursorDot.style.top = e.clientY + 'px';
-    });
-
-    // Mouse-tracking Shadow & Tilt Interaction
-    const parallaxLayers = document.querySelectorAll('.parallax-layer');
-    const mainCanvas = document.getElementById('main-canvas');
-
-    document.addEventListener('mousemove', (e) => {
-        const mouseX = (e.clientX / window.innerWidth) - 0.5;
-        const mouseY = (e.clientY / window.innerHeight) - 0.5;
-
-        parallaxLayers.forEach(layer => {
-            const speed = layer.getAttribute('data-speed') || 1;
-            const x = mouseX * 80 * speed;
-            const y = mouseY * 80 * speed;
-            layer.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+    <!-- TopNavBar Component -->
+    <header class="fixed top-0 left-0 w-full z-40 bg-brand-cream/95 backdrop-blur-md border-b border-brand-chocolate/10 px-6 py-4 md:px-12">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <!-- Brand Logo -->
+            <a href="#" class="font-serif text-2xl md:text-3xl font-black italic tracking-tight text-brand-chocolate hover:text-brand-caramel transition-colors">
+                Dessert Groove
+            </a>
             
-            // Subtle tilt for images
-            if(layer.querySelector('img')) {
-                const tiltX = mouseY * 15 * speed;
-                const tiltY = mouseX * -15 * speed;
-                layer.querySelector('img').style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale(1.02)`;
-            }
-        });
-    });
+            <!-- Navigation -->
+            <nav class="hidden md:flex gap-8 items-center">
+                <a class="font-semibold text-brand-chocolate/80 hover:text-brand-caramel transition-colors" href="#menu">Menu</a>
+                <a class="font-semibold text-brand-chocolate/80 hover:text-brand-caramel transition-colors" href="#our-story">Our Story</a>
+                <a class="font-semibold text-brand-chocolate/80 hover:text-brand-caramel transition-colors" href="#order">Order</a>
+                <a class="font-semibold text-brand-chocolate/80 hover:text-brand-caramel transition-colors" href="https://instagram.com/dessertgroove" target="_blank" rel="noopener">Instagram</a>
+            </nav>
 
-    // Parallax scroll effect for mask text
-    window.addEventListener('scroll', () => {
-        const scroll = window.pageYOffset;
-        const maskText = document.querySelector('.mask-text');
-        if(maskText) {
-            maskText.style.backgroundPositionY = (scroll * 0.3) + 'px';
-        }
-    });
+            <!-- Order Button (Desktop) -->
+            <a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener" class="hidden md:inline-flex items-center gap-2 bg-brand-caramel text-brand-cream px-6 py-3 rounded-full font-bold hover:bg-brand-chocolate transition-all hover:scale-105 active:scale-95 shadow-md">
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.262 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.73-1.45L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.42 9.864-9.858.002-2.634-1.02-5.11-2.881-6.974-1.86-1.863-4.334-2.886-6.97-2.887-5.441 0-9.87 4.423-9.874 9.86-.001 1.762.463 3.486 1.345 5.02L1.875 22.1l6.19-1.625zM17.487 14.39c-.3-.15-1.776-.875-2.05-.974-.275-.1-.476-.15-.676.15-.2.3-.775.974-.95 1.174-.175.2-.35.225-.65.075-.3-.15-1.265-.467-2.41-1.485-.89-.794-1.49-1.775-1.665-2.075-.175-.3-.019-.462.13-.611.135-.135.3-.35.45-.525.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.525-.075-.15-.676-1.625-.926-2.225-.244-.589-.49-.51-.676-.51-.175-.008-.375-.01-.575-.01-.2 0-.525.075-.8.375-.275.3-1.05 1.025-1.05 2.5s1.075 2.9 1.225 3.1c.15.2 2.11 3.22 5.115 4.52.715.31 1.273.495 1.708.634.72.23 1.375.197 1.892.12.576-.085 1.776-.726 2.026-1.426.25-.7.25-1.3 1.75-1.425-.075-.125-.275-.2-.575-.35z"/>
+                </svg>
+                Order on WhatsApp
+            </a>
+            
+            <!-- Mobile Menu Toggle Button (Scrolls to menu) -->
+            <a href="#menu" class="md:hidden inline-flex items-center gap-1 bg-brand-chocolate text-brand-cream px-4 py-2 rounded-full font-bold text-sm shadow">
+                Menu
+            </a>
+        </div>
+    </header>
 
-    // Click interaction scale
-    document.addEventListener('mousedown', () => {
-        cursor.style.transform = 'scale(0.8)';
-        cursorDot.style.transform = 'scale(1.5)';
-    });
-    document.addEventListener('mouseup', () => {
-        cursor.style.transform = 'scale(1)';
-        cursorDot.style.transform = 'scale(1)';
-    });
-</script>
-</body></html>
+    <!-- Main Content -->
+    <main class="relative overflow-hidden pt-24">
+        
+        <!-- Hero Section -->
+        <section class="min-h-[85vh] w-full flex items-center justify-center relative px-6 py-12 md:px-12">
+            <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Text Area -->
+                <div class="lg:col-span-7 flex flex-col items-start text-left z-10">
+                    <span class="bg-brand-caramel-light text-brand-caramel px-4 py-1.5 rounded-full text-sm font-bold uppercase tracking-wider mb-6">
+                        Fresh Bakes from Pune
+                    </span>
+                    <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight tracking-tight text-brand-text-dark mb-6">
+                        Made in Pune, with too much love and not enough patience.
+                    </h1>
+                    <p class="text-lg md:text-xl text-brand-chocolate/85 max-w-xl leading-relaxed mb-8">
+                        Hey there! I’m Subha Srihari. Dessert Groove is my home-style kitchen in Pune where I bake honest, decadent desserts. No fancy names, no corporate jargon. Just real, butter-rich cakes, fudgy brownies, and seasonal specials baked fresh to order and delivered straight to your door.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                        <a href="#menu" class="bg-brand-chocolate text-brand-cream px-8 py-4 rounded-xl font-bold text-lg text-center hover:bg-brand-caramel transition-all hover:scale-[1.02] active:scale-95 shadow-lg">
+                            See What's Baking
+                        </a>
+                        <a href="#our-story" class="border-2 border-brand-chocolate text-brand-chocolate px-8 py-4 rounded-xl font-bold text-lg text-center hover:bg-brand-chocolate/5 transition-all hover:scale-[1.02] active:scale-95">
+                            Our Story
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Large Unapologetic Hero Image -->
+                <div class="lg:col-span-5 flex justify-center z-10 mt-6 lg:mt-0">
+                    <div class="relative w-full max-w-[420px] aspect-[4/5] food-image-frame rounded-2xl overflow-hidden bg-brand-cream-dark">
+                        <img src="images/brownies.png" alt="Freshly baked Sea Salt Brownies" class="w-full h-full object-cover">
+                        <div class="absolute bottom-4 left-4 right-4 bg-brand-cream/95 backdrop-blur-sm p-4 rounded-xl border border-brand-chocolate/10 shadow-lg">
+                            <p class="font-serif text-lg font-bold text-brand-chocolate">Fudgy Sea Salt Brownies</p>
+                            <p class="text-sm text-brand-chocolate/75">Subha's original, crowd-favorite recipe.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Warm decorative blobs for visual depth -->
+            <div class="absolute top-1/4 right-0 w-80 h-80 bg-brand-cream-dark/40 rounded-full blur-3xl -z-10"></div>
+            <div class="absolute bottom-10 left-10 w-96 h-96 bg-brand-caramel-light/20 rounded-full blur-3xl -z-10"></div>
+        </section>
+
+        <!-- The Menu Section -->
+        <section id="menu" class="py-24 px-6 md:px-12 bg-brand-cream-dark/30 border-t border-b border-brand-chocolate/5">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <span class="text-brand-caramel font-bold text-sm uppercase tracking-widest block mb-2">Baked Fresh to Order</span>
+                    <h2 class="font-serif text-3xl md:text-5xl font-black text-brand-text-dark mb-4">Our Real Menu</h2>
+                    <p class="text-brand-chocolate/75 text-lg">No pretension here. Just honest, incredibly delicious bakes made with high-quality ingredients. Order today, eat tomorrow!</p>
+                </div>
+
+                <!-- Menu Cards Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Item 1: Brownies -->
+                    <div class="menu-card rounded-2xl overflow-hidden flex flex-col">
+                        <div class="h-64 overflow-hidden relative">
+                            <img src="images/brownies.png" alt="Sea Salt Brownies" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-4 right-4 bg-brand-cream text-brand-chocolate px-3 py-1 rounded-full text-sm font-bold shadow-md">₹450 <span class="text-xs font-normal">/ box of 6</span></span>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div>
+                                <h3 class="font-serif text-xl font-bold text-brand-chocolate mb-2">Fudgy Sea Salt Brownies</h3>
+                                <p class="text-brand-chocolate/85 text-sm leading-relaxed mb-4">
+                                    Intensely chocolatey, shiny cracked tops, and a pinch of flaky sea salt. My absolute first recipe and bestseller.
+                                </p>
+                            </div>
+                            <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Subha!%20I%27d%20love%20to%20order%20a%20box%20of%20your%20Fudgy%20Sea%20Salt%20Brownies." target="_blank" rel="noopener" class="w-full text-center bg-brand-caramel/10 hover:bg-brand-caramel text-brand-caramel hover:text-brand-cream py-3.5 rounded-xl font-semibold text-sm transition-all flex items-center justify-center gap-2">
+                                Order Brownies via WhatsApp
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Item 2: Cakes -->
+                    <div class="menu-card rounded-2xl overflow-hidden flex flex-col">
+                        <div class="h-64 overflow-hidden relative">
+                            <img src="images/chocolate_cake.png" alt="Chocolate Fudge Cake" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-4 right-4 bg-brand-cream text-brand-chocolate px-3 py-1 rounded-full text-sm font-bold shadow-md">₹950 <span class="text-xs font-normal">/ half kg</span></span>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div>
+                                <h3 class="font-serif text-xl font-bold text-brand-chocolate mb-2">Classic Chocolate Fudge Cake</h3>
+                                <p class="text-brand-chocolate/85 text-sm leading-relaxed mb-4">
+                                    Rich, moist chocolate sponge layered with thick dark chocolate fudge ganache. Rustic, simple, and pure comfort.
+                                </p>
+                            </div>
+                            <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Subha!%20I%27d%20love%20to%20order%20the%20Classic%20Chocolate%20Fudge%20Cake." target="_blank" rel="noopener" class="w-full text-center bg-brand-caramel/10 hover:bg-brand-caramel text-brand-caramel hover:text-brand-cream py-3.5 rounded-xl font-semibold text-sm transition-all flex items-center justify-center gap-2">
+                                Order Cake via WhatsApp
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Item 3: Cookies -->
+                    <div class="menu-card rounded-2xl overflow-hidden flex flex-col">
+                        <div class="h-64 overflow-hidden relative">
+                            <img src="images/cookies.png" alt="Brown Butter Cookies" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-4 right-4 bg-brand-cream text-brand-chocolate px-3 py-1 rounded-full text-sm font-bold shadow-md">₹350 <span class="text-xs font-normal">/ box of 4</span></span>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div>
+                                <h3 class="font-serif text-xl font-bold text-brand-chocolate mb-2">Brown Butter Choc Chip Cookies</h3>
+                                <p class="text-brand-chocolate/85 text-sm leading-relaxed mb-4">
+                                    Crispy edges, chewy centers, loaded with Belgian chocolate chunks and a deep nutty brown-butter aroma.
+                                </p>
+                            </div>
+                            <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Subha!%20I%27d%20love%20to%20order%20a%20box%20of%20your%20Brown%20Butter%20Chocolate%20Chip%20Cookies." target="_blank" rel="noopener" class="w-full text-center bg-brand-caramel/10 hover:bg-brand-caramel text-brand-caramel hover:text-brand-cream py-3.5 rounded-xl font-semibold text-sm transition-all flex items-center justify-center gap-2">
+                                Order Cookies via WhatsApp
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Item 4: Dessert Jars -->
+                    <div class="menu-card rounded-2xl overflow-hidden flex flex-col">
+                        <div class="h-64 overflow-hidden relative">
+                            <img src="images/dessert_jars.png" alt="Double Chocolate Dessert Jar" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-4 right-4 bg-brand-cream text-brand-chocolate px-3 py-1 rounded-full text-sm font-bold shadow-md">₹220 <span class="text-xs font-normal">each</span></span>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div>
+                                <h3 class="font-serif text-xl font-bold text-brand-chocolate mb-2">Double Chocolate Fudge Jars</h3>
+                                <p class="text-brand-chocolate/85 text-sm leading-relaxed mb-4">
+                                    Layers of soft fudge cake, chocolate custard, and vanilla whipped cream in a jar. Best eaten cold straight from the fridge!
+                                </p>
+                            </div>
+                            <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Subha!%20I%27d%20love%20to%20order%20some%20Double%20Chocolate%20Fudge%20Jars." target="_blank" rel="noopener" class="w-full text-center bg-brand-caramel/10 hover:bg-brand-caramel text-brand-caramel hover:text-brand-cream py-3.5 rounded-xl font-semibold text-sm transition-all flex items-center justify-center gap-2">
+                                Order Jars via WhatsApp
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Item 5: Cheesecakes -->
+                    <div class="menu-card rounded-2xl overflow-hidden flex flex-col">
+                        <div class="h-64 overflow-hidden relative">
+                            <img src="images/cheesecakes.png" alt="Baked NY Cheesecake" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-4 right-4 bg-brand-cream text-brand-chocolate px-3 py-1 rounded-full text-sm font-bold shadow-md">₹1,200 <span class="text-xs font-normal">/ whole 6"</span></span>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div>
+                                <h3 class="font-serif text-xl font-bold text-brand-chocolate mb-2">Baked New York Cheesecake</h3>
+                                <p class="text-brand-chocolate/85 text-sm leading-relaxed mb-4">
+                                    Creamy, slow-baked classic on a buttery biscuit base, topped with our homemade tart strawberry compote.
+                                </p>
+                            </div>
+                            <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Subha!%20I%27d%20love%20to%20order%20a%20Baked%20New%20York%20Cheesecake." target="_blank" rel="noopener" class="w-full text-center bg-brand-caramel/10 hover:bg-brand-caramel text-brand-caramel hover:text-brand-cream py-3.5 rounded-xl font-semibold text-sm transition-all flex items-center justify-center gap-2">
+                                Order Cheesecake via WhatsApp
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Item 6: Seasonal Specials -->
+                    <div class="menu-card rounded-2xl overflow-hidden flex flex-col">
+                        <div class="h-64 overflow-hidden relative">
+                            <img src="images/seasonal_specials.png" alt="Seasonal Mango Cream Cake" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-4 right-4 bg-brand-cream text-brand-chocolate px-3 py-1 rounded-full text-sm font-bold shadow-md">₹1,000 <span class="text-xs font-normal">/ half kg</span></span>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div>
+                                <h3 class="font-serif text-xl font-bold text-brand-chocolate mb-2">Seasonal Fresh Mango Cream Cake</h3>
+                                <p class="text-brand-chocolate/85 text-sm leading-relaxed mb-4">
+                                    Loads of fresh, sweet Devgad mangoes piled high on vanilla sponge and fresh whipped cream. Only available when mangoes are sweet!
+                                </p>
+                            </div>
+                            <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Subha!%20I%27d%20love%20to%20order%20the%20Seasonal%20Fresh%20Mango%20Cream%20Cake." target="_blank" rel="noopener" class="w-full text-center bg-brand-caramel/10 hover:bg-brand-caramel text-brand-caramel hover:text-brand-cream py-3.5 rounded-xl font-semibold text-sm transition-all flex items-center justify-center gap-2">
+                                Order Special via WhatsApp
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Story Section -->
+        <section id="our-story" class="py-24 px-6 md:px-12 bg-brand-chocolate-dark text-brand-text-light relative overflow-hidden">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+                <!-- Text Area -->
+                <div class="lg:col-span-7 flex flex-col items-start z-10 text-left">
+                    <span class="text-brand-caramel font-bold text-sm uppercase tracking-widest block mb-4">Behind the Oven</span>
+                    <h2 class="font-serif text-3xl md:text-5xl font-black text-brand-cream mb-6">Hi, I'm Subha Srihari.</h2>
+                    <div class="space-y-6 text-brand-cream/80 text-lg leading-relaxed max-w-2xl font-light">
+                        <p>
+                            It started in my kitchen in Pune, with one brownie recipe I couldn't stop making. I'd bake a batch, share it with friends, and watch it disappear in minutes. Soon, friends of friends started calling and asking if they could buy a box for their weekend dinners or birthdays.
+                        </p>
+                        <p>
+                            That is how <strong class="text-brand-cream font-bold">Dessert Groove</strong> was born. No venture capital, no massive industrial commercial kitchen. Just me, a couple of ovens, and a deep commitment to home-style baking.
+                        </p>
+                        <p>
+                            I believe good desserts are made of simple, real things. I don't use commercial stabilizers, premixes, or artificial flavorings. If a recipe calls for butter, it gets pure, rich creamery butter. If it calls for chocolate, I use premium real chocolate. I still crack every egg and measure every gram of flour myself in small, controlled batches.
+                        </p>
+                        <p>
+                            When you order from Dessert Groove, you're not getting a factory-assembled box from a retail franchise. You're getting a fresh dessert baked specifically for you by a friend who loves sweet things.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Image Area -->
+                <div class="lg:col-span-5 flex justify-center z-10">
+                    <div class="relative w-full max-w-[420px] aspect-[4/5] rounded-2xl overflow-hidden border-4 border-brand-cream-dark/20 shadow-2xl">
+                        <img src="images/subha_kitchen.png" alt="Subha's warm home kitchen" class="w-full h-full object-cover">
+                        <div class="absolute bottom-4 left-4 right-4 bg-brand-chocolate-dark/90 backdrop-blur-sm p-4 rounded-xl border border-brand-cream/10">
+                            <p class="font-serif text-sm font-semibold text-brand-cream">My Kitchen, Pune</p>
+                            <p class="text-xs text-brand-cream/60">Where the magic, the flour dust, and the recipes happen.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Background design touches -->
+            <div class="absolute top-0 left-0 w-full h-full opacity-10 bg-[radial-gradient(#92400e_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none"></div>
+        </section>
+
+        <!-- Order & Delivery Info Section -->
+        <section id="order" class="py-24 px-6 md:px-12 bg-brand-cream">
+            <div class="max-w-4xl mx-auto text-center">
+                <span class="text-brand-caramel font-bold text-sm uppercase tracking-widest block mb-2">How to Get Your Bakes</span>
+                <h2 class="font-serif text-3xl md:text-5xl font-black text-brand-text-dark mb-8">Ordering is Personal & Simple</h2>
+                
+                <!-- Steps -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left mb-12">
+                    <div class="p-6 bg-brand-cream-dark/30 rounded-xl border border-brand-chocolate/5">
+                        <div class="w-12 h-12 rounded-full bg-brand-caramel text-brand-cream flex items-center justify-center font-bold text-lg mb-4">1</div>
+                        <h3 class="font-serif text-lg font-bold mb-2">Pick Your Treat</h3>
+                        <p class="text-brand-chocolate/80 text-sm">Browse our menu above. All bakes are customizable for birthdays, anniversaries, or just random sweet cravings.</p>
+                    </div>
+                    <div class="p-6 bg-brand-cream-dark/30 rounded-xl border border-brand-chocolate/5">
+                        <div class="w-12 h-12 rounded-full bg-brand-caramel text-brand-cream flex items-center justify-center font-bold text-lg mb-4">2</div>
+                        <h3 class="font-serif text-lg font-bold mb-2">Message Us</h3>
+                        <p class="text-brand-chocolate/80 text-sm">Click any order button to chat on WhatsApp. Let me know what you want, when you want it, and any eggless requests.</p>
+                    </div>
+                    <div class="p-6 bg-brand-cream-dark/30 rounded-xl border border-brand-chocolate/5">
+                        <div class="w-12 h-12 rounded-full bg-brand-caramel text-brand-cream flex items-center justify-center font-bold text-lg mb-4">3</div>
+                        <h3 class="font-serif text-lg font-bold mb-2">Fresh Delivery</h3>
+                        <p class="text-brand-chocolate/80 text-sm">We bake it fresh to order and arrange hand-delivery straight from our kitchen to your home.</p>
+                    </div>
+                </div>
+
+                <!-- Delivery locations in Pune -->
+                <div class="p-8 bg-brand-cream-dark/50 rounded-2xl border border-brand-chocolate/10 mb-12">
+                    <h3 class="font-serif text-xl font-bold mb-3 text-brand-chocolate">We deliver across Pune</h3>
+                    <p class="text-brand-chocolate/80 max-w-2xl mx-auto leading-relaxed text-sm md:text-base">
+                        Deliveries are hand-carried across major Pune localities including 
+                        <strong>Kothrud, Baner, Aundh, Kalyani Nagar, Koregaon Park, Viman Nagar, Karve Nagar, Erandwane, and Shivajinagar</strong>. 
+                        Delivery charges are calculated based on actual distance. Self-pickup is also welcome!
+                    </p>
+                </div>
+
+                <!-- Call to Action -->
+                <a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener" class="inline-flex items-center gap-3 bg-brand-caramel text-brand-cream px-10 py-5 rounded-2xl font-bold text-xl hover:bg-brand-chocolate transition-all hover:scale-105 active:scale-95 shadow-xl">
+                    <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.262 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.73-1.45L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.42 9.864-9.858.002-2.634-1.02-5.11-2.881-6.974-1.86-1.863-4.334-2.886-6.97-2.887-5.441 0-9.87 4.423-9.874 9.86-.001 1.762.463 3.486 1.345 5.02L1.875 22.1l6.19-1.625zM17.487 14.39c-.3-.15-1.776-.875-2.05-.974-.275-.1-.476-.15-.676.15-.2.3-.775.974-.95 1.174-.175.2-.35.225-.65.075-.3-.15-1.265-.467-2.41-1.485-.89-.794-1.49-1.775-1.665-2.075-.175-.3-.019-.462.13-.611.135-.135.3-.35.45-.525.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.525-.075-.15-.676-1.625-.926-2.225-.244-.589-.49-.51-.676-.51-.175-.008-.375-.01-.575-.01-.2 0-.525.075-.8.375-.275.3-1.05 1.025-1.05 2.5s1.075 2.9 1.225 3.1c.15.2 2.11 3.22 5.115 4.52.715.31 1.273.495 1.708.634.72.23 1.375.197 1.892.12.576-.085 1.776-.726 2.026-1.426.25-.7.25-1.3 1.75-1.425-.075-.125-.275-.2-.575-.35z"/>
+                    </svg>
+                    Order on WhatsApp
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-brand-chocolate text-brand-cream-dark py-12 px-6 border-t border-brand-chocolate/20">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <!-- Left: Links -->
+            <div class="flex gap-8">
+                <a href="https://instagram.com/dessertgroove" target="_blank" rel="noopener" class="hover:text-brand-caramel-light transition-colors font-semibold">Instagram</a>
+                <a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener" class="hover:text-brand-caramel-light transition-colors font-semibold">WhatsApp</a>
+            </div>
+
+            <!-- Right: Made with love in Pune -->
+            <div class="text-sm font-semibold tracking-wider opacity-95">
+                Made with love in Pune
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Sticky WhatsApp Bar (Always visible on mobile) -->
+    <div class="fixed bottom-0 left-0 w-full md:hidden bg-brand-cream border-t border-brand-chocolate/10 p-3 z-50 shadow-[0_-8px_20px_rgba(61,35,20,0.1)] flex justify-center">
+        <a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-2 bg-brand-caramel text-brand-cream py-3 px-6 rounded-xl font-bold text-center shadow hover:bg-brand-chocolate active:scale-[0.98] transition-all">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.262 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.73-1.45L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.42 9.864-9.858.002-2.634-1.02-5.11-2.881-6.974-1.86-1.863-4.334-2.886-6.97-2.887-5.441 0-9.87 4.423-9.874 9.86-.001 1.762.463 3.486 1.345 5.02L1.875 22.1l6.19-1.625zM17.487 14.39c-.3-.15-1.776-.875-2.05-.974-.275-.1-.476-.15-.676.15-.2.3-.775.974-.95 1.174-.175.2-.35.225-.65.075-.3-.15-1.265-.467-2.41-1.485-.89-.794-1.49-1.775-1.665-2.075-.175-.3-.019-.462.13-.611.135-.135.3-.35.45-.525.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.525-.075-.15-.676-1.625-.926-2.225-.244-.589-.49-.51-.676-.51-.175-.008-.375-.01-.575-.01-.2 0-.525.075-.8.375-.275.3-1.05 1.025-1.05 2.5s1.075 2.9 1.225 3.1c.15.2 2.11 3.22 5.115 4.52.715.31 1.273.495 1.708.634.72.23 1.375.197 1.892.12.576-.085 1.776-.726 2.026-1.426.25-.7.25-1.3 1.75-1.425-.075-.125-.275-.2-.575-.35z"/>
+            </svg>
+            Order on WhatsApp
+        </a>
+    </div>
+
+</body>
+</html>
