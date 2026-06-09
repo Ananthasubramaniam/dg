@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Order Fudgy Sea Salt Brownies | Dessert Grove</title>
+    <meta name="description" content="Order fresh, warm, chocolatey Fudgy Sea Salt Brownies from Dessert Grove. Customize your quantity, enter delivery details, and order directly via WhatsApp."/>
+    
+    <!-- Google Fonts & Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600;1,700&family=Source+Sans+3:wght@300;400;500;600;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    
+    <script id="tailwind-config">
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'brand-cream': '#fdfaf6',
+              'brand-cream-dark': '#f5ecd8',
+              'brand-chocolate': '#3d2314',
+              'brand-chocolate-dark': '#231107',
+              'brand-caramel': '#92400e',
+              'brand-caramel-light': '#fef3c7',
+              'brand-text-dark': '#231107',
+              'brand-text-light': '#fdfaf6',
+              'whatsapp': '#25D366',
+              'whatsapp-dark': '#128C7E',
+            },
+            fontFamily: {
+              serif: ['Playfair Display', 'serif'],
+              sans: ['Source Sans 3', 'sans-serif'],
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+        body {
+            background-color: #fdfaf6;
+            color: #231107;
+            font-family: 'Source Sans 3', sans-serif;
+            background-image: radial-gradient(rgba(61, 35, 20, 0.03) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        
+        .custom-card {
+            border: 1px solid rgba(61, 35, 20, 0.12);
+            background: #ffffff;
+            box-shadow: 0 10px 30px -5px rgba(61, 35, 20, 0.05), 0 20px 40px -15px rgba(61, 35, 20, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .custom-card:hover {
+            box-shadow: 0 15px 35px -5px rgba(61, 35, 20, 0.08), 0 25px 50px -10px rgba(61, 35, 20, 0.12);
+        }
+
+        /* Subtle focus effect for inputs */
+        .warm-input:focus {
+            outline: none;
+            border-color: #92400e !important;
+            box-shadow: 0 0 0 3px rgba(146, 64, 14, 0.1) !important;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-caramel-light selection:text-brand-chocolate min-h-screen flex flex-col justify-between py-12 px-4">
+
+    <!-- Top Navigation Link back to Main Site -->
+    <div class="max-w-md w-full mx-auto mb-6 flex justify-between items-center px-2">
+        <a href="index.html" class="flex items-center gap-1.5 text-sm font-semibold text-brand-caramel hover:text-brand-chocolate transition-colors group">
+            <svg class="w-4 h-4 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Back to Dessert Grove
+        </a>
+        <span class="text-xs uppercase tracking-widest font-bold text-brand-chocolate/40">Order Form</span>
+    </div>
+
+    <!-- Product Card Component -->
+    <main class="flex-grow flex items-center justify-center">
+        <div class="custom-card w-full max-w-[360px] rounded-3xl overflow-hidden flex flex-col">
+            
+            <!-- 1. Product Image & Price Badge -->
+            <div class="h-56 relative w-full overflow-hidden bg-brand-cream-dark">
+                <img src="images/brownies_card.png" alt="Fudgy Sea Salt Brownies" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700">
+                
+                <!-- Price Badge Overlay -->
+                <span class="absolute top-4 right-4 bg-brand-cream-dark/95 backdrop-blur-md text-brand-chocolate border border-brand-chocolate/10 px-4 py-1.5 rounded-full text-sm font-extrabold shadow-lg select-none">
+                    ₹450 <span class="text-xs font-semibold opacity-75">/ box of 6</span>
+                </span>
+            </div>
+
+            <!-- Card Content Wrapper -->
+            <div class="p-6 flex flex-col gap-5">
+                
+                <!-- 2. Product Name & Description -->
+                <div>
+                    <h1 class="font-serif text-2xl font-black text-brand-chocolate leading-tight mb-2">
+                        Fudgy Sea Salt Brownies
+                    </h1>
+                    <p class="text-brand-chocolate/80 text-[14px] leading-relaxed font-normal">
+                        Intensely chocolatey, shiny cracked tops, and a pinch of flaky sea salt. My absolute first recipe and bestseller.
+                    </p>
+                </div>
+
+                <hr class="border-brand-chocolate/10 my-0" />
+
+                <!-- 3. Quantity Selector & Interactive Pricing -->
+                <div class="flex items-center justify-between">
+                    <span class="text-sm font-bold text-brand-chocolate/90">Select Quantity</span>
+                    
+                    <div class="flex items-center bg-brand-cream-dark/40 rounded-full p-1 border border-brand-chocolate/10">
+                        <button id="btn-minus" type="button" class="w-8 h-8 rounded-full flex items-center justify-center text-brand-chocolate hover:bg-brand-cream hover:text-brand-caramel transition-all active:scale-90 font-bold select-none text-lg leading-none" aria-label="Decrease quantity">
+                            −
+                        </button>
+                        <span id="quantity-display" class="w-10 text-center font-bold text-base text-brand-chocolate select-none">
+                            1
+                        </span>
+                        <button id="btn-plus" type="button" class="w-8 h-8 rounded-full flex items-center justify-center text-brand-chocolate hover:bg-brand-cream hover:text-brand-caramel transition-all active:scale-90 font-bold select-none text-lg leading-none" aria-label="Increase quantity">
+                            +
+                        </button>
+                    </div>
+                </div>
+
+                <hr class="border-brand-chocolate/10 my-0" />
+
+                <!-- 4. Customer Details Fields -->
+                <form id="order-form" class="flex flex-col gap-3.5">
+                    <h3 class="text-xs uppercase tracking-wider font-extrabold text-brand-caramel/90 mb-0.5">
+                        Delivery Details
+                    </h3>
+                    
+                    <!-- Name Input -->
+                    <div class="relative">
+                        <label for="input-name" class="block text-xs font-bold text-brand-chocolate/75 mb-1">Your Name</label>
+                        <input id="input-name" type="text" placeholder="e.g. Anjali Sharma" required
+                            class="warm-input w-full px-3.5 py-2 text-sm bg-brand-cream/40 border border-brand-chocolate/15 rounded-xl text-brand-chocolate placeholder-brand-chocolate/30 font-medium transition-all" />
+                    </div>
+
+                    <!-- Phone Input -->
+                    <div>
+                        <label for="input-phone" class="block text-xs font-bold text-brand-chocolate/75 mb-1">WhatsApp Phone Number</label>
+                        <input id="input-phone" type="tel" placeholder="e.g. +91 98765 43210" required
+                            class="warm-input w-full px-3.5 py-2 text-sm bg-brand-cream/40 border border-brand-chocolate/15 rounded-xl text-brand-chocolate placeholder-brand-chocolate/30 font-medium transition-all" />
+                    </div>
+
+                    <!-- Address Input -->
+                    <div>
+                        <label for="input-address" class="block text-xs font-bold text-brand-chocolate/75 mb-1">Delivery Address</label>
+                        <textarea id="input-address" rows="2" placeholder="e.g. Flat 302, Green Valley Apt, Baner" required
+                            class="warm-input w-full px-3.5 py-2 text-sm bg-brand-cream/40 border border-brand-chocolate/15 rounded-xl text-brand-chocolate placeholder-brand-chocolate/30 font-medium transition-all resize-none"></textarea>
+                    </div>
+
+                    <!-- Delivery Date Input -->
+                    <div>
+                        <label for="input-date" class="block text-xs font-bold text-brand-chocolate/75 mb-1">Delivery Date</label>
+                        <input id="input-date" type="date" required
+                            class="warm-input w-full px-3.5 py-2 text-sm bg-brand-cream/40 border border-brand-chocolate/15 rounded-xl text-brand-chocolate font-medium transition-all" />
+                    </div>
+
+                    <!-- Notes Input -->
+                    <div>
+                        <label for="input-notes" class="block text-xs font-bold text-brand-chocolate/75 mb-1">Special Notes (Optional)</label>
+                        <input id="input-notes" type="text" placeholder="e.g. Eggless preference, extra salt sprinkle"
+                            class="warm-input w-full px-3.5 py-2 text-sm bg-brand-cream/40 border border-brand-chocolate/15 rounded-xl text-brand-chocolate placeholder-brand-chocolate/30 font-medium transition-all" />
+                    </div>
+                </form>
+
+                <!-- Live Total Price Area -->
+                <div class="bg-brand-cream-dark/30 rounded-2xl p-4 border border-brand-chocolate/5 flex items-center justify-between mt-1">
+                    <div>
+                        <p class="text-[11px] uppercase tracking-wider font-extrabold text-brand-chocolate/60 leading-none mb-1">Total Summary</p>
+                        <p id="summary-text" class="text-sm font-semibold text-brand-chocolate">1 box of Brownies</p>
+                    </div>
+                    <div class="text-right">
+                        <p id="total-price" class="font-serif text-xl font-black text-brand-caramel">₹450</p>
+                    </div>
+                </div>
+
+                <!-- WhatsApp Order Button -->
+                <button id="btn-whatsapp-order" type="button" 
+                    class="w-full bg-whatsapp hover:bg-whatsapp-dark text-white font-bold py-4 px-6 rounded-2xl transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-md hover:shadow-lg flex items-center justify-center gap-2.5 text-base">
+                    <!-- WhatsApp SVG Icon -->
+                    <svg class="w-5.5 h-5.5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.262 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.73-1.45L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.42 9.864-9.858.002-2.634-1.02-5.11-2.881-6.974-1.86-1.863-4.334-2.886-6.97-2.887-5.441 0-9.87 4.423-9.874 9.86-.001 1.762.463 3.486 1.345 5.02L1.875 22.1l6.19-1.625zM17.487 14.39c-.3-.15-1.776-.875-2.05-.974-.275-.1-.476-.15-.676.15-.2.3-.775.974-.95 1.174-.175.2-.35.225-.65.075-.3-.15-1.265-.467-2.41-1.485-.89-.794-1.49-1.775-1.665-2.075-.175-.3-.019-.462.13-.611.135-.135.3-.35.45-.525.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.525-.075-.15-.676-1.625-.926-2.225-.244-.589-.49-.51-.676-.51-.175-.008-.375-.01-.575-.01-.2 0-.525.075-.8.375-.275.3-1.05 1.025-1.05 2.5s1.075 2.9 1.225 3.1c.15.2 2.11 3.22 5.115 4.52.715.31 1.273.495 1.708.634.72.23 1.375.197 1.892.12.576-.085 1.776-.726 2.026-1.426.25-.7.25-1.3 1.75-1.425-.075-.125-.275-.2-.575-.35z"/>
+                    </svg>
+                    Send Order on WhatsApp
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Area -->
+    <footer class="mt-8 text-center text-xs text-brand-chocolate/55 font-medium tracking-wide">
+        Dessert Grove Bakery &copy; 2026. Made with love in Pune.
+    </footer>
+
+    <!-- Interactive Logic Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Configuration
+            const WHATSAPP_NUMBER = '919158555032'; // Replace with actual seller number
+            const ITEM_PRICE = 450;
+            const ITEM_NAME = 'Fudgy Sea Salt Brownies';
+
+            // Element references
+            const btnMinus = document.getElementById('btn-minus');
+            const btnPlus = document.getElementById('btn-plus');
+            const quantityDisplay = document.getElementById('quantity-display');
+            const summaryText = document.getElementById('summary-text');
+            const totalPriceDisplay = document.getElementById('total-price');
+            const btnWhatsapp = document.getElementById('btn-whatsapp-order');
+            const form = document.getElementById('order-form');
+            
+            const inputName = document.getElementById('input-name');
+            const inputPhone = document.getElementById('input-phone');
+            const inputAddress = document.getElementById('input-address');
+            const inputDate = document.getElementById('input-date');
+            const inputNotes = document.getElementById('input-notes');
+
+            // Set default delivery date to tomorrow
+            const tomorrow = new Date();
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            const yyyy = tomorrow.getFullYear();
+            const mm = String(tomorrow.getMonth() + 1).padStart(2, '0');
+            const dd = String(tomorrow.getDate()).padStart(2, '0');
+            
+            inputDate.value = `${yyyy}-${mm}-${dd}`;
+            inputDate.min = `${yyyy}-${mm}-${dd}`; // Set minimum date to tomorrow for fresh baking window
+
+            let quantity = 1;
+
+            // Live pricing & display update
+            function updateSummary() {
+                const totalVal = quantity * ITEM_PRICE;
+                quantityDisplay.textContent = quantity;
+                summaryText.textContent = `${quantity} box${quantity > 1 ? 'es' : ''} of Brownies`;
+                totalPriceDisplay.textContent = `₹${totalVal.toLocaleString('en-IN')}`;
+            }
+
+            // Quantity event listeners
+            btnMinus.addEventListener('click', () => {
+                if (quantity > 1) {
+                    quantity--;
+                    updateSummary();
+                }
+            });
+
+            btnPlus.addEventListener('click', () => {
+                quantity++;
+                updateSummary();
+            });
+
+            // Handle WhatsApp link click
+            btnWhatsapp.addEventListener('click', () => {
+                // Perform HTML5 form validation checks
+                if (!form.reportValidity()) {
+                    return; // Stop if form inputs are invalid (empty required fields etc.)
+                }
+
+                const totalVal = quantity * ITEM_PRICE;
+                const clientName = inputName.value.trim();
+                const clientPhone = inputPhone.value.trim();
+                const clientAddress = inputAddress.value.trim();
+                const clientDate = inputDate.value;
+                const clientNotes = inputNotes.value.trim() || 'None';
+
+                // Format delivery date for readable display (e.g. DD-MM-YYYY)
+                let formattedDate = clientDate;
+                try {
+                    const dateObj = new Date(clientDate);
+                    formattedDate = dateObj.toLocaleDateString('en-GB', {
+                        day: '2-digit',
+                        month: 'short',
+                        year: 'numeric'
+                    });
+                } catch(e) {}
+
+                // Formulate the Whatsapp pre-filled message text
+                const textMessage = 
+`Hi Subha Srihari! I'd like to place an order.
+
+*Order Details:*
+- Item: ${ITEM_NAME}
+- Quantity: ${quantity} box(es)
+- Total Price: ₹${totalVal}
+
+*Customer Details:*
+- Name: ${clientName}
+- Phone: ${clientPhone}
+- Address: ${clientAddress}
+- Delivery Date: ${formattedDate}
+- Notes: ${clientNotes}`;
+
+                // Construct full wa.me API link
+                const encodedText = encodeURIComponent(textMessage);
+                const whatsappUrl = `https://wa.me/+91805607233`;
+
+                // Open the link in a new tab
+                window.open(whatsappUrl, '_blank');
+            });
+        });
+    </script>
+</body>
+</html>
+
