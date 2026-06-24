@@ -51,37 +51,64 @@ export const CinematicLoader: React.FC<CinematicLoaderProps> = ({ onComplete }) 
 
   return (
     <div className="preloader-root">
-      {/* Split Panels (Slide Out Left & Right) */}
+      {/* Background Image (Layer 3) */}
+      <motion.div
+        initial={{ scale: 1.05, opacity: 0.8, filter: 'blur(10px) brightness(0.35)' }}
+        animate={
+          isExiting
+            ? { scale: 1.4, opacity: 0, filter: 'blur(0px) brightness(1.2)' }
+            : { 
+                scale: 1.05 + (progress / 100) * 0.05, 
+                opacity: 0.8 + (progress / 100) * 0.2,
+                filter: `blur(${10 - (progress / 100) * 10}px) brightness(${0.35 + (progress / 100) * 0.45})` 
+              }
+        }
+        transition={
+          isExiting
+            ? { duration: 1.1, ease: [0.16, 1, 0.3, 1] }
+            : { duration: 0.1, ease: 'linear' } // React to state ticks fast
+        }
+        className="preloader-bg-image-wrapper"
+      >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img 
+          src="/images/animationimage.jpeg" 
+          alt="Premium Cake Close-up" 
+          className="preloader-bg-image"
+        />
+      </motion.div>
+
+      {/* Split Panels (Layer 2 - Slide Out Left & Right) */}
       <motion.div
         initial={{ x: 0 }}
         animate={{ x: isExiting ? '-100%' : 0 }}
-        transition={{ duration: 1.1, ease: [0.85, 0, 0.15, 1] }}
+        transition={{ duration: 1.2, ease: [0.85, 0, 0.15, 1], delay: 0.1 }}
         className="preloader-panel left"
       />
       <motion.div
         initial={{ x: 0 }}
         animate={{ x: isExiting ? '100%' : 0 }}
-        transition={{ duration: 1.1, ease: [0.85, 0, 0.15, 1] }}
+        transition={{ duration: 1.2, ease: [0.85, 0, 0.15, 1], delay: 0.1 }}
         onAnimationComplete={handleAnimationComplete}
         className="preloader-panel right"
       />
 
-      {/* Central Content */}
+      {/* Central Content (Layer 4) */}
       <AnimatePresence>
         {!isExiting && (
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.9, y: -20 }}
-            transition={{ duration: 0.5, ease: 'easeOut' }}
-            className="preloader-content flex-center"
+            exit={{ opacity: 0, scale: 0.9, y: -30 }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="loader-brand-card flex-center"
           >
             {/* Elegant glowing ambient orb behind */}
             <div className="loader-glow-orb" />
 
             {/* Cake Outline SVG */}
             <div className="loader-logo-wrapper">
-              <svg viewBox="0 0 100 100" width="120" height="120" className="loader-svg">
+              <svg viewBox="0 0 100 100" width="100" height="100" className="loader-svg">
                 {/* Cake stand base */}
                 <path 
                   d="M 35 80 L 65 80 M 50 80 L 50 70" 
