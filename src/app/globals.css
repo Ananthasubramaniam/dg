@@ -429,13 +429,14 @@ button {
   border: 1px solid var(--color-caramel);
   color: var(--color-gold-light);
   display: inline-block;
-  padding: 6px 16px;
+  padding: 6px 20px;
   border-radius: 50px;
   font-size: 0.85rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  margin-bottom: 16px;
+  margin-bottom: 0;
+  margin-right: 15px;
 }
 .hero-rating-wrapper {
   display: inline-flex;
@@ -443,9 +444,10 @@ button {
   gap: 10px;
   background-color: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.15);
-  padding: 6px 16px;
+  padding: 6px 20px;
   border-radius: 50px;
-  margin-bottom: 24px;
+  margin-bottom: 48px;
+  margin-right: 30px;
 }
 .hero-rating-stars {
   gap: 2px;
