@@ -1,10 +1,15 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import { useCart } from '../context/CartContext';
 import { ShoppingBag, Menu as MenuIcon, X } from 'lucide-react';
 
-export const Navbar: React.FC = () => {
+interface NavbarProps {
+  startAnimation: boolean;
+}
+
+export const Navbar: React.FC<NavbarProps> = ({ startAnimation }) => {
   const { cartCount, setCartOpen } = useCart();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -37,7 +42,12 @@ export const Navbar: React.FC = () => {
 
   return (
     <>
-      <header className={`navbar-header ${isScrolled ? 'scrolled shadow-md' : ''}`}>
+      <motion.header 
+        initial={{ y: -80, opacity: 0 }}
+        animate={startAnimation ? { y: 0, opacity: 1 } : { y: -80, opacity: 0 }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
+        className={`navbar-header ${isScrolled ? 'scrolled shadow-md' : ''}`}
+      >
         <div className="navbar-container container">
           {/* Logo */}
           <a href="#home" className="navbar-logo">
@@ -76,7 +86,7 @@ export const Navbar: React.FC = () => {
             </button>
           </div>
         </div>
-      </header>
+      </motion.header>
 
       {/* Mobile Navigation Drawer */}
       <div className={`mobile-nav-drawer ${isMobileMenuOpen ? 'open' : ''}`}>

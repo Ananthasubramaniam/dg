@@ -129,15 +129,15 @@ button {
   align-items: center;
   gap: 8px;
   box-shadow: var(--shadow-sm);
-  transition: var(--transition-fast);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .btn-primary:hover {
   background-color: var(--color-caramel);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(184, 142, 82, 0.4);
 }
 .btn-primary:active {
-  transform: translateY(0);
+  transform: translateY(-1px) scale(1);
 }
 
 .btn-secondary {
@@ -152,12 +152,16 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  transition: var(--transition-fast);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .btn-secondary:hover {
   border-color: var(--color-chocolate);
   background-color: rgba(44, 27, 24, 0.02);
-  transform: translateY(-2px);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(44, 27, 24, 0.1);
+}
+.btn-secondary:active {
+  transform: translateY(-1px) scale(1);
 }
 
 /* Section Common Elements */
@@ -453,6 +457,15 @@ button {
   color: var(--color-white);
   margin-bottom: 20px;
   line-height: 1.15;
+}
+.hero-title-line-wrapper {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  padding-bottom: 6px;
+}
+.hero-title-line {
+  display: inline-block;
 }
 .hero-subtitle {
   font-size: 1.3rem;
@@ -2316,4 +2329,138 @@ button {
 .hero-quick-menu-link:hover {
   opacity: 1;
   color: var(--color-gold);
+}
+
+/* -------------------------------------------------------------
+   LUXURY PRELOADER SYSTEM
+------------------------------------------------------------- */
+.preloader-root {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+.preloader-panel {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  background-color: var(--color-chocolate);
+  pointer-events: auto;
+  z-index: 1;
+}
+.preloader-panel.left {
+  left: 0;
+  border-right: 1px solid rgba(212, 175, 55, 0.1);
+}
+.preloader-panel.right {
+  right: 0;
+  border-left: 1px solid rgba(212, 175, 55, 0.1);
+}
+.preloader-content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-cream);
+  text-align: center;
+  pointer-events: none;
+}
+.loader-glow-orb {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  filter: blur(20px);
+  z-index: -1;
+  pointer-events: none;
+}
+.loader-logo-wrapper {
+  margin-bottom: 24px;
+}
+.loader-svg {
+  filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3));
+}
+.draw-path {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  animation: drawStroke 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+.flame-path {
+  transform-origin: 50px 18px;
+  animation: flickerFlame 1.5s ease-in-out infinite alternate;
+}
+.loader-brand-title {
+  font-family: var(--font-serif), serif;
+  font-size: 2.2rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+.loader-divider {
+  width: 40px;
+  height: 1px;
+  background-color: var(--color-gold);
+  margin: 16px 0;
+  opacity: 0.7;
+}
+.loader-status-text {
+  font-family: var(--font-sans), sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--color-gold-light);
+  opacity: 0.8;
+  margin-bottom: 12px;
+}
+.loader-counter {
+  font-family: var(--font-serif), serif;
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: var(--color-gold);
+}
+.counter-num {
+  font-variant-numeric: tabular-nums;
+}
+.counter-pct {
+  font-size: 1rem;
+  margin-left: 2px;
+  opacity: 0.7;
+}
+
+@keyframes drawStroke {
+  0% {
+    stroke-dashoffset: 200;
+  }
+  50% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -200;
+  }
+}
+@keyframes flickerFlame {
+  0% {
+    transform: scale(0.9) translateY(0);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.15) translateY(-1px);
+    opacity: 1;
+    filter: drop-shadow(0 0 4px var(--color-gold));
+  }
+}
+
+.layout-locked {
+  max-height: 100vh;
+  overflow: hidden;
 }
