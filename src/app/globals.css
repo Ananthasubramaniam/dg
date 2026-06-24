@@ -2366,6 +2366,7 @@ button {
   z-index: 2;
   overflow: hidden;
   pointer-events: none;
+  transform-origin: 50% 80%; /* Focus the zoom transition directly into the pink cake */
 }
 .preloader-bg-image {
   width: 100%;

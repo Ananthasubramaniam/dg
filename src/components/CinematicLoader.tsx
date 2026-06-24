@@ -68,6 +68,7 @@ export const CinematicLoader: React.FC<CinematicLoaderProps> = ({ onComplete }) 
             ? { duration: 1.1, ease: [0.16, 1, 0.3, 1] }
             : { duration: 0.1, ease: 'linear' } // React to state ticks fast
         }
+        style={{ transformOrigin: '50% 80%' }}
         className="preloader-bg-image-wrapper"
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
