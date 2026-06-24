@@ -31,7 +31,7 @@ export const FeaturedProducts: React.FC = () => {
     <section id="featured" className="featured-section">
       <div className="container">
         <div className="section-header text-center">
-          <span className="section-badge">Chef&apos;s Recommendations</span>
+          <span className="section-badge">Baker&apos;s Recommendations</span>
           <h2 className="section-title">Featured Creations</h2>
           <div className="section-divider" />
           <p className="section-description">

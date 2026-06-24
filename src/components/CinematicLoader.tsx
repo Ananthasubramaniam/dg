@@ -16,7 +16,7 @@ export const CinematicLoader: React.FC<CinematicLoaderProps> = ({ onComplete }) 
     document.body.style.overflow = 'hidden';
 
     // Simulate progress load
-    const duration = 2200; // 2.2 seconds total load time
+    const duration = 1500; // 2 seconds total load time
     const intervalTime = 30;
     const steps = duration / intervalTime;
     const increment = 100 / steps;
@@ -51,48 +51,134 @@ export const CinematicLoader: React.FC<CinematicLoaderProps> = ({ onComplete }) 
 
   return (
     <div className="preloader-root">
-      {/* Background Image (Layer 3) */}
+      {/* Left Panel (Layer 2 - Swinging Double Door Left + Image Left Half) */}
       <motion.div
-        initial={{ scale: 1.05, opacity: 0.8, filter: 'blur(10px) brightness(0.35)' }}
-        animate={
-          isExiting
-            ? { scale: 1.4, opacity: 0, filter: 'blur(0px) brightness(1.2)' }
-            : { 
-                scale: 1.05 + (progress / 100) * 0.05, 
-                opacity: 0.8 + (progress / 100) * 0.2,
-                filter: `blur(${10 - (progress / 100) * 10}px) brightness(${0.35 + (progress / 100) * 0.45})` 
-              }
-        }
-        transition={
-          isExiting
-            ? { duration: 1.1, ease: [0.16, 1, 0.3, 1] }
-            : { duration: 0.1, ease: 'linear' } // React to state ticks fast
-        }
-        style={{ transformOrigin: '50% 80%' }}
-        className="preloader-bg-image-wrapper"
+        initial={{ rotateY: 0, opacity: 1 }}
+        animate={{ rotateY: isExiting ? -95 : 0, opacity: isExiting ? 0 : 1 }}
+        transition={{ duration: 1.3, ease: [0.85, 0, 0.15, 1], delay: 0.1 }}
+        className="preloader-panel left"
       >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img 
-          src="/images/animationimage.jpeg" 
-          alt="Premium Cake Close-up" 
-          className="preloader-bg-image"
-        />
+        <div className="panel-image-container">
+          {/* Blurred Background Layer (Left Panel) */}
+          <motion.div
+            initial={{ scale: 1.05, opacity: 0.7, filter: 'blur(10px) brightness(0.35)' }}
+            animate={
+              isExiting
+                ? { scale: 1.4, opacity: 0, filter: 'blur(0px) brightness(1.2)' }
+                : { 
+                    scale: 1.05 + (progress / 100) * 0.05, 
+                    opacity: 0.7 + (progress / 100) * 0.1,
+                    filter: `blur(${10 - (progress / 100) * 4}px) brightness(${0.35 + (progress / 100) * 0.1})` 
+                  }
+            }
+            transition={
+              isExiting
+                ? { duration: 1.1, ease: [0.16, 1, 0.3, 1] }
+                : { duration: 0.1, ease: 'linear' }
+            }
+            className="preloader-bg-image-layer blurred-layer"
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img 
+              src="/images/animationimage.jpeg" 
+              alt="Cake Wall Blurred Left" 
+              className="preloader-bg-image"
+            />
+          </motion.div>
+
+          {/* Sharp Spotlight Layer (Left Panel) */}
+          <motion.div
+            initial={{ scale: 1.05, opacity: 0.8, filter: 'blur(0px) brightness(0.7)' }}
+            animate={
+              isExiting
+                ? { scale: 1.4, opacity: 0, filter: 'blur(0px) brightness(1.3)' }
+                : { 
+                    scale: 1.05 + (progress / 100) * 0.05, 
+                    opacity: 0.8 + (progress / 100) * 0.2,
+                    filter: `blur(0px) brightness(${0.7 + (progress / 100) * 0.25})` 
+                  }
+            }
+            transition={
+              isExiting
+                ? { duration: 1.1, ease: [0.16, 1, 0.3, 1] }
+                : { duration: 0.1, ease: 'linear' }
+            }
+            className="preloader-bg-image-layer sharp-spotlight-layer"
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img 
+              src="/images/animationimage.jpeg" 
+              alt="Premium Cake Highlighted Left" 
+              className="preloader-bg-image"
+            />
+          </motion.div>
+        </div>
       </motion.div>
 
-      {/* Split Panels (Layer 2 - Slide Out Left & Right) */}
+      {/* Right Panel (Layer 2 - Swinging Double Door Right + Image Right Half) */}
       <motion.div
-        initial={{ x: 0 }}
-        animate={{ x: isExiting ? '-100%' : 0 }}
-        transition={{ duration: 1.2, ease: [0.85, 0, 0.15, 1], delay: 0.1 }}
-        className="preloader-panel left"
-      />
-      <motion.div
-        initial={{ x: 0 }}
-        animate={{ x: isExiting ? '100%' : 0 }}
-        transition={{ duration: 1.2, ease: [0.85, 0, 0.15, 1], delay: 0.1 }}
+        initial={{ rotateY: 0, opacity: 1 }}
+        animate={{ rotateY: isExiting ? 95 : 0, opacity: isExiting ? 0 : 1 }}
+        transition={{ duration: 1.3, ease: [0.85, 0, 0.15, 1], delay: 0.1 }}
         onAnimationComplete={handleAnimationComplete}
         className="preloader-panel right"
-      />
+      >
+        <div className="panel-image-container">
+          {/* Blurred Background Layer (Right Panel) */}
+          <motion.div
+            initial={{ scale: 1.05, opacity: 0.7, filter: 'blur(10px) brightness(0.35)' }}
+            animate={
+              isExiting
+                ? { scale: 1.4, opacity: 0, filter: 'blur(0px) brightness(1.2)' }
+                : { 
+                    scale: 1.05 + (progress / 100) * 0.05, 
+                    opacity: 0.7 + (progress / 100) * 0.1,
+                    filter: `blur(${10 - (progress / 100) * 4}px) brightness(${0.35 + (progress / 100) * 0.1})` 
+                  }
+            }
+            transition={
+              isExiting
+                ? { duration: 1.1, ease: [0.16, 1, 0.3, 1] }
+                : { duration: 0.1, ease: 'linear' }
+            }
+            className="preloader-bg-image-layer blurred-layer"
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img 
+              src="/images/animationimage.jpeg" 
+              alt="Cake Wall Blurred Right" 
+              className="preloader-bg-image"
+            />
+          </motion.div>
+
+          {/* Sharp Spotlight Layer (Right Panel) */}
+          <motion.div
+            initial={{ scale: 1.05, opacity: 0.8, filter: 'blur(0px) brightness(0.7)' }}
+            animate={
+              isExiting
+                ? { scale: 1.4, opacity: 0, filter: 'blur(0px) brightness(1.3)' }
+                : { 
+                    scale: 1.05 + (progress / 100) * 0.05, 
+                    opacity: 0.8 + (progress / 100) * 0.2,
+                    filter: `blur(0px) brightness(${0.7 + (progress / 100) * 0.25})` 
+                  }
+            }
+            transition={
+              isExiting
+                ? { duration: 1.1, ease: [0.16, 1, 0.3, 1] }
+                : { duration: 0.1, ease: 'linear' }
+            }
+            className="preloader-bg-image-layer sharp-spotlight-layer"
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img 
+              src="/images/animationimage.jpeg" 
+              alt="Premium Cake Highlighted Right" 
+              className="preloader-bg-image"
+            />
+          </motion.div>
+        </div>
+      </motion.div>
 
       {/* Central Content (Layer 4) */}
       <AnimatePresence>
@@ -130,7 +216,7 @@ export const CinematicLoader: React.FC<CinematicLoaderProps> = ({ onComplete }) 
                 />
                 {/* Cake body bottom tier */}
                 <rect 
-                  x="30" 
+                  x="20" 
                   y="45" 
                   width="40" 
                   height="25" 

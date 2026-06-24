@@ -7,8 +7,7 @@ import { CATEGORIES, MENU_DATA, MenuItem } from '../data/menu';
 import { Minus, Plus, ShoppingBag, Eye } from 'lucide-react';
 
 export const MenuSection: React.FC = () => {
-  const { addToCart, setActiveDetailsProduct } = useCart();
-  const [activeCategory, setActiveCategory] = useState<string>('cakes');
+  const { addToCart, setActiveDetailsProduct, activeMenuCategory: activeCategory, setActiveMenuCategory: setActiveCategory } = useCart();
   const [quantities, setQuantities] = useState<Record<string, number>>({});
 
   const filteredItems = MENU_DATA.filter((item) => item.category === activeCategory);

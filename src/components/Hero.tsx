@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { ShoppingBag, ChevronDown, Star } from 'lucide-react';
 
 interface HeroProps {
@@ -11,13 +11,49 @@ interface HeroProps {
 export const Hero: React.FC<HeroProps> = ({ startAnimation }) => {
   const generalWhatsappLink = 'https://wa.me/919158555032?text=Hi%20Dessert%20Groove,%20I\'d%20like%20to%20inquire%20about%20ordering%20some%20delicious%20cakes%20and%20desserts!';
 
+  // 3D Parallax Mouse Tracking
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  const springConfig = { damping: 30, stiffness: 100 };
+  const springX = useSpring(mouseX, springConfig);
+  const springY = useSpring(mouseY, springConfig);
+
+  const rotateX = useTransform(springY, [-0.5, 0.5], [6, -6]);
+  const rotateY = useTransform(springX, [-0.5, 0.5], [-6, 6]);
+  const x = useTransform(springX, [-0.5, 0.5], [-15, 15]);
+  const y = useTransform(springY, [-0.5, 0.5], [-15, 15]);
+
   return (
-    <section id="home" className="hero-section">
-      {/* Background Image with Dark Overlay - Animating Zoom */}
+    <section 
+      id="home" 
+      className="hero-section"
+      onMouseMove={(e) => {
+        const rect = e.currentTarget.getBoundingClientRect();
+        const width = rect.width;
+        const height = rect.height;
+        const xVal = (e.clientX - rect.left) / width - 0.5;
+        const yVal = (e.clientY - rect.top) / height - 0.5;
+        mouseX.set(xVal);
+        mouseY.set(yVal);
+      }}
+      onMouseLeave={() => {
+        mouseX.set(0);
+        mouseY.set(0);
+      }}
+    >
+      {/* Background Image with Dark Overlay - Animating Zoom + 3D Mouse Parallax */}
       <motion.div 
         initial={{ scale: 1.15, opacity: 0 }}
-        animate={startAnimation ? { scale: 1.0, opacity: 1 } : { scale: 1.15, opacity: 0 }}
+        animate={startAnimation ? { scale: 1.08, opacity: 1 } : { scale: 1.15, opacity: 0 }}
         transition={{ duration: 6, ease: [0.16, 1, 0.3, 1] }}
+        style={{
+          x,
+          y,
+          rotateX,
+          rotateY,
+          transformStyle: 'preserve-3d',
+        }}
         className="hero-bg" 
       />
       <div className="hero-overlay" />

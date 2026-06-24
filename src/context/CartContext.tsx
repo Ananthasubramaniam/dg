@@ -21,6 +21,8 @@ interface CartContextType {
   activeDetailsProduct: MenuItem | null;
   setActiveDetailsProduct: (product: MenuItem | null) => void;
   triggerWhatsAppOrder: () => void;
+  activeMenuCategory: string;
+  setActiveMenuCategory: (category: string) => void;
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -29,6 +31,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [cart, setCart] = useState<CartItem[]>([]);
   const [isCartOpen, setCartOpen] = useState(false);
   const [activeDetailsProduct, setActiveDetailsProduct] = useState<MenuItem | null>(null);
+  const [activeMenuCategory, setActiveMenuCategory] = useState<string>('cakes');
 
   // Load cart from localStorage on mount
   useEffect(() => {
@@ -127,6 +130,8 @@ Thank you.`;
         activeDetailsProduct,
         setActiveDetailsProduct,
         triggerWhatsAppOrder,
+        activeMenuCategory,
+        setActiveMenuCategory,
       }}
     >
       {children}
