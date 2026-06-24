@@ -1,7 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useRef } from 'react';
 import { Star, ChevronLeft, ChevronRight, MessageSquare } from 'lucide-react';
 
 interface GoogleReview {
@@ -13,7 +12,7 @@ interface GoogleReview {
 }
 
 export const Testimonials: React.FC = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const carouselRef = useRef<HTMLDivElement>(null);
 
   /*
     NOTE FOR DESSERT GROOVE DEVELOPERS:
@@ -64,16 +63,14 @@ Keep it up Dessert grove!`
     }
   ];
 
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) => 
-      prevIndex === googleReviews.length - 1 ? 0 : prevIndex + 1
-    );
-  };
-
-  const handlePrev = () => {
-    setCurrentIndex((prevIndex) => 
-      prevIndex === 0 ? googleReviews.length - 1 : prevIndex - 1
-    );
+  const scroll = (direction: 'left' | 'right') => {
+    if (carouselRef.current) {
+      const scrollAmount = 474; // Card width (450px) + Gap (24px)
+      carouselRef.current.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth'
+      });
+    }
   };
 
   return (
@@ -103,83 +100,58 @@ Keep it up Dessert grove!`
         </div>
 
         {/* Carousel Area */}
-        <div className="carousel-container-wrapper">
-          <div className="carousel-main-row flex-center">
-            {/* Left Button */}
-            <button 
-              onClick={handlePrev} 
-              className="carousel-arrow-btn prev-btn flex-center"
-              aria-label="Previous review"
-            >
-              <ChevronLeft size={24} />
-            </button>
+        <div className="reviews-carousel-wrapper">
+          {/* Left Button */}
+          <button 
+            onClick={() => scroll('left')} 
+            className="carousel-nav-btn prev flex-center"
+            aria-label="Scroll left"
+          >
+            <ChevronLeft size={24} />
+          </button>
 
-            {/* Carousel Item with Animation */}
-            <div className="carousel-content-viewport">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={currentIndex}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
-                  transition={{ duration: 0.25 }}
-                  className="carousel-review-card"
-                >
-                  <div className="carousel-card-header">
-                    <div className="review-author-meta">
-                      <div className="author-avatar flex-center">
-                        {googleReviews[currentIndex].author.charAt(0)}
-                      </div>
-                      <div>
-                        <h4 className="review-author-name">
-                          {googleReviews[currentIndex].author}
-                        </h4>
-                        <span className="review-google-badge">Verified Local Guide</span>
-                      </div>
+          {/* Swipeable Viewport */}
+          <div ref={carouselRef} className="reviews-carousel-container">
+            {googleReviews.map((review) => (
+              <div key={review.id} className="review-card-slide">
+                <div className="carousel-card-header">
+                  <div className="review-author-meta">
+                    <div className="author-avatar flex-center">
+                      {review.author.charAt(0)}
                     </div>
-                    <span className="review-card-date">
-                      {googleReviews[currentIndex].date}
-                    </span>
+                    <div>
+                      <h4 className="review-author-name">{review.author}</h4>
+                      <span className="review-google-badge">Verified Local Guide</span>
+                    </div>
                   </div>
+                  <span className="review-card-date">{review.date}</span>
+                </div>
 
-                  <div className="review-stars-row flex-center" style={{ gap: '4px', justifyContent: 'flex-start', margin: '16px 0' }}>
-                    {[...Array(5)].map((_, i) => (
-                      <Star 
-                        key={i} 
-                        size={16} 
-                        className={i < googleReviews[currentIndex].rating ? 'star-filled' : 'star-empty'} 
-                      />
-                    ))}
-                  </div>
+                <div className="review-stars-row flex-center" style={{ gap: '4px', justifyContent: 'flex-start', margin: '16px 0' }}>
+                  {[...Array(5)].map((_, i) => (
+                    <Star 
+                      key={i} 
+                      size={16} 
+                      className={i < review.rating ? 'star-filled' : 'star-empty'} 
+                    />
+                  ))}
+                </div>
 
-                  <p className="carousel-review-text">
-                    &ldquo;{googleReviews[currentIndex].text}&rdquo;
-                  </p>
-                </motion.div>
-              </AnimatePresence>
-            </div>
-
-            {/* Right Button */}
-            <button 
-              onClick={handleNext} 
-              className="carousel-arrow-btn next-btn flex-center"
-              aria-label="Next review"
-            >
-              <ChevronRight size={24} />
-            </button>
-          </div>
-
-          {/* Dots Indicator */}
-          <div className="carousel-dots flex-center" style={{ gap: '8px', marginTop: '24px' }}>
-            {googleReviews.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentIndex(index)}
-                className={`carousel-dot ${currentIndex === index ? 'active' : ''}`}
-                aria-label={`Go to review ${index + 1}`}
-              />
+                <p className="carousel-review-text">
+                  &ldquo;{review.text}&rdquo;
+                </p>
+              </div>
             ))}
           </div>
+
+          {/* Right Button */}
+          <button 
+            onClick={() => scroll('right')} 
+            className="carousel-nav-btn next flex-center"
+            aria-label="Scroll right"
+          >
+            <ChevronRight size={24} />
+          </button>
         </div>
 
         {/* Call to review */}

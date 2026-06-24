@@ -5,6 +5,7 @@ import FeaturedProducts from '../components/FeaturedProducts';
 import BehindDessertGroove from '../components/BehindDessertGroove';
 import CustomCakes from '../components/CustomCakes';
 import MenuSection from '../components/MenuSection';
+import QuickMenu from '../components/QuickMenu';
 // import Gallery from '../components/Gallery';
 import Testimonials from '../components/Testimonials';
 import FAQ from '../components/FAQ';
@@ -21,6 +22,7 @@ export default function Home() {
         <BehindDessertGroove />
         <FeaturedProducts />
         <MenuSection />
+        <QuickMenu />
         <CustomCakes />
         {/* <Gallery /> */}
         <Testimonials />

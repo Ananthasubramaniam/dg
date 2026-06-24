@@ -516,6 +516,28 @@ button {
   flex-direction: column;
   gap: 20px;
 }
+.story-read-more-btn {
+  align-self: flex-start;
+  background: none;
+  border: none;
+  color: var(--color-gold);
+  font-family: var(--font-sans), sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 4px 0;
+  margin-top: 10px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-bottom: 1px dashed var(--color-gold);
+  transition: all var(--transition-fast);
+}
+.story-read-more-btn:hover {
+  color: var(--color-gold-light);
+  border-bottom-color: var(--color-gold-light);
+  transform: translateY(-1px);
+}
 .story-paragraphs p {
   color: rgba(250, 246, 240, 0.8);
   font-size: 1.05rem;
@@ -587,17 +609,85 @@ button {
   padding: 100px 0;
   background-color: var(--color-white);
 }
-.featured-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-  gap: 30px;
+.featured-carousel-wrapper {
+  position: relative;
+  width: 100%;
   margin-bottom: 50px;
 }
+.featured-carousel-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  gap: 24px;
+  padding: 10px 4px 20px 4px;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
+.featured-carousel-container::-webkit-scrollbar {
+  height: 6px;
+}
+.featured-carousel-container::-webkit-scrollbar-track {
+  background: var(--color-cream-dark);
+  border-radius: 10px;
+}
+.featured-carousel-container::-webkit-scrollbar-thumb {
+  background: var(--color-caramel);
+  border-radius: 10px;
+}
 .featured-card {
+  flex: 0 0 300px;
   background-color: var(--color-cream);
   border-radius: var(--border-radius-md);
   overflow: hidden;
   border: 1px solid rgba(44, 27, 24, 0.04);
+  scroll-snap-align: start;
+}
+/* Carousel Arrow Buttons for Desktop */
+.carousel-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  background-color: var(--color-white);
+  color: var(--color-chocolate);
+  border: 1px solid var(--color-cream-dark);
+  border-radius: 50%;
+  box-shadow: var(--shadow-md);
+  z-index: 10;
+  transition: all var(--transition-fast);
+}
+.carousel-nav-btn:hover {
+  background-color: var(--color-caramel);
+  color: var(--color-white);
+  border-color: var(--color-caramel);
+}
+.carousel-nav-btn.prev {
+  left: -24px;
+}
+.carousel-nav-btn.next {
+  right: -24px;
+}
+@media (max-width: 1240px) {
+  .carousel-nav-btn.prev {
+    left: -10px;
+  }
+  .carousel-nav-btn.next {
+    right: -10px;
+  }
+}
+@media (max-width: 768px) {
+  .carousel-nav-btn {
+    display: none;
+  }
+  .featured-carousel-container {
+    padding: 10px 24px 20px 24px;
+    margin: 0 -24px;
+  }
+  .featured-card {
+    flex: 0 0 280px;
+  }
 }
 .card-image-wrapper {
   height: 220px;
@@ -1720,43 +1810,42 @@ button {
   color: var(--color-cream-dark);
 }
 
-.carousel-container-wrapper {
-  max-width: 680px;
-  margin: 0 auto;
-}
-.carousel-main-row {
+.reviews-carousel-wrapper {
   position: relative;
-  gap: 20px;
+  width: 100%;
 }
-.carousel-arrow-btn {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background-color: var(--color-white);
-  color: var(--color-chocolate);
-  box-shadow: var(--shadow-sm);
-  border: 1px solid var(--color-cream-dark);
-  z-index: 5;
-  flex-shrink: 0;
+.reviews-carousel-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  gap: 24px;
+  padding: 10px 4px 20px 4px;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
 }
-.carousel-arrow-btn:hover {
-  background-color: var(--color-caramel);
-  color: var(--color-white);
-  border-color: transparent;
-  transform: scale(1.05);
+.reviews-carousel-container::-webkit-scrollbar {
+  height: 6px;
 }
-.carousel-content-viewport {
-  flex: 1;
-  overflow: hidden;
-  min-height: 220px;
+.reviews-carousel-container::-webkit-scrollbar-track {
+  background: var(--color-cream-dark);
+  border-radius: 10px;
 }
-.carousel-review-card {
+.reviews-carousel-container::-webkit-scrollbar-thumb {
+  background: var(--color-caramel);
+  border-radius: 10px;
+}
+.review-card-slide {
+  flex: 0 0 450px;
   background-color: var(--color-white);
   border-radius: var(--border-radius-lg);
   padding: 40px;
   box-shadow: var(--shadow-sm);
   border: 1px solid rgba(44, 27, 24, 0.03);
   text-align: left;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
 }
 .carousel-card-header {
   display: flex;
@@ -1798,29 +1887,20 @@ button {
   font-style: italic;
   font-weight: 300;
 }
-.carousel-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: var(--color-cream-dark);
-}
-.carousel-dot.active {
-  background-color: var(--color-caramel);
-  width: 20px;
-  border-radius: 4px;
-}
 
-@media (max-width: 576px) {
-  .carousel-review-card {
-    padding: 24px 20px;
+@media (max-width: 768px) {
+  .reviews-carousel-container {
+    padding: 10px 24px 20px 24px;
+    margin: 0 -24px;
   }
-  .carousel-arrow-btn {
-    width: 36px;
-    height: 36px;
+  .review-card-slide {
+    flex: 0 0 320px;
+    padding: 24px;
   }
-  .carousel-arrow-btn svg {
-    width: 18px;
-    height: 18px;
+}
+@media (max-width: 480px) {
+  .review-card-slide {
+    flex: 0 0 280px;
   }
 }
 
@@ -2043,11 +2123,19 @@ button {
   right: 30px;
   background-color: #25d366;
   color: var(--color-white);
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
+  padding: 12px 20px;
+  border-radius: 30px;
   box-shadow: 0 8px 30px rgba(37, 211, 102, 0.3);
   z-index: 99;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  transition: all var(--transition-fast);
+}
+.floating-whatsapp-btn .whatsapp-btn-label {
+  display: inline;
+  font-size: 0.95rem;
 }
 .floating-whatsapp-btn:hover {
   background-color: #128c7e;
@@ -2110,6 +2198,14 @@ button {
   .floating-whatsapp-btn {
     bottom: 90px;
     right: 20px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    padding: 0;
+    justify-content: center;
+  }
+  .floating-whatsapp-btn .whatsapp-btn-label {
+    display: none;
   }
   .scroll-top-btn {
     bottom: 90px;
@@ -2120,4 +2216,104 @@ button {
     width: calc(100% - 40px);
     justify-content: center;
   }
+}
+
+/* -------------------------------------------------------------
+   QUICK PRICE MENU SECTION
+------------------------------------------------------------- */
+.quick-menu-section {
+  padding: 100px 0;
+  background-color: var(--color-gold-ultra-light);
+}
+.quick-menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+.quick-menu-category-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-cream-dark);
+  border-radius: var(--border-radius-md);
+  padding: 28px;
+  box-shadow: var(--shadow-sm);
+}
+.quick-category-title {
+  font-size: 1.35rem;
+  color: var(--color-chocolate);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.quick-category-divider {
+  height: 2px;
+  background: linear-gradient(to right, var(--color-caramel) 30%, transparent 100%);
+  margin-bottom: 20px;
+}
+.quick-items-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.quick-item-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  width: 100%;
+}
+.quick-item-name {
+  font-family: var(--font-sans), sans-serif;
+  font-weight: 500;
+  color: var(--color-chocolate-light);
+  flex-shrink: 0;
+  max-width: 70%;
+}
+.quick-item-dots {
+  flex-grow: 1;
+  border-bottom: 1px dotted var(--color-text-muted);
+  margin: 0 8px;
+  opacity: 0.4;
+}
+.quick-item-price-block {
+  flex-shrink: 0;
+  text-align: right;
+}
+.quick-price {
+  font-weight: 600;
+  color: var(--color-chocolate);
+}
+.quick-unit {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 576px) {
+  .quick-menu-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .quick-menu-category-card {
+    padding: 20px;
+  }
+}
+
+/* Hero Quick Menu Link */
+.hero-quick-menu-link-wrapper {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+}
+.hero-quick-menu-link {
+  font-family: var(--font-sans), sans-serif;
+  font-size: 0.95rem;
+  color: var(--color-gold-light);
+  text-decoration: underline;
+  opacity: 0.85;
+  transition: all var(--transition-fast);
+}
+.hero-quick-menu-link:hover {
+  opacity: 1;
+  color: var(--color-gold);
 }

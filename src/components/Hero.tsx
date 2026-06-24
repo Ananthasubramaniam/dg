@@ -77,6 +77,17 @@ export const Hero: React.FC = () => {
               Order on WhatsApp
             </a>
           </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="hero-quick-menu-link-wrapper"
+          >
+            <a href="#quick-menu" className="hero-quick-menu-link">
+              ⚡ Looking for a fast price list? View Quick Menu
+            </a>
+          </motion.div>
         </div>
       </div>
 

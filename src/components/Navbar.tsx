@@ -27,6 +27,7 @@ export const Navbar: React.FC = () => {
     { label: 'Our Story', href: '#our-story' },
     { label: 'Featured', href: '#featured' },
     { label: 'Menu', href: '#menu' },
+    { label: 'Quick Menu', href: '#quick-menu' },
     { label: 'Custom Cakes', href: '#custom-cakes' },
     // { label: 'Gallery', href: '#gallery' },
     { label: 'Reviews', href: '#reviews' },

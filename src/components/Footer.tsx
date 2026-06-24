@@ -48,6 +48,7 @@ export const Footer: React.FC = () => {
 
   const whatsappNumber = '919158555032';
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=Hi%20Dessert%20Groove,%20I'd%20like%20to%20place%20an%20order!`;
+  const orderWhatsappUrl = `https://wa.me/${whatsappNumber}?text=Hi,%20I'd%20like%20to%20order`;
   const instagramUrl = 'https://instagram.com/dessert_groove'; // Placeholder link
 
   const instagramImages = [
@@ -157,13 +158,14 @@ export const Footer: React.FC = () => {
       
       {/* Floating WhatsApp Chat Button */}
       <a
-        href={whatsappUrl}
+        href={orderWhatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
         className="floating-whatsapp-btn pulse-gold flex-center"
-        aria-label="Chat on WhatsApp"
+        aria-label="Order on WhatsApp"
       >
-        <MessageSquare size={24} />
+        <MessageSquare size={20} />
+        <span className="whatsapp-btn-label">Order</span>
       </a>
 
       {/* Sticky Bottom Order Cart Button (Visible on mobile/scroll when cart contains items) */}
