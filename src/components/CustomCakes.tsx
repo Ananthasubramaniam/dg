@@ -17,37 +17,37 @@ export const CustomCakes: React.FC = () => {
       title: 'Birthday Cakes',
       icon: <Calendar size={20} className="gold-text" />,
       description: 'Make birthdays unforgettable with personalized designs, custom toppings, and flavors customized specifically for the celebrant.',
-      imageUrl: '/images/cheesecakes.png' // Real image
+      imageUrl: '/images/cake_black_forest.jpeg'
     },
     {
       title: 'Theme Cakes',
       icon: <Star size={20} className="gold-text" />,
       description: 'Bring dreams to life! From cartoon characters and hobbies to movies and passions, we sculpt theme-based edible magic.',
-      imageUrl: 'https://images.unsplash.com/photo-1535141192574-5d4897c13636?q=80&w=600&auto=format&fit=crop'
+      imageUrl: '/images/cake_birthday_octonauts.jpeg'
     },
     {
       title: 'Fondant Cakes',
       icon: <Award size={20} className="gold-text" />,
       description: 'Elegant, satin-smooth fondant tiers hand-painted and detailed with sugar artistry. Ideal for high-end celebrations.',
-      imageUrl: 'https://images.unsplash.com/photo-1558961309-db6f1a3ec609?q=80&w=600&auto=format&fit=crop'
+      imageUrl: '/images/cake_anniversary_blue.jpeg'
     },
     {
       title: 'Corporate Cakes',
       icon: <ShieldCheck size={20} className="gold-text" />,
       description: 'Celebrate company milestones, product launches, or office milestones with branded logo cupcakes and large custom slab cakes.',
-      imageUrl: '/images/seasonal_specials.png' // Real image
+      imageUrl: '/images/cake_chocolate_gold.jpeg'
     },
     {
       title: 'Anniversary Cakes',
       icon: <Heart size={20} className="gold-text" />,
       description: 'Mark your milestones of love with sophisticated custom wedding or anniversary tiers decorated with delicate sugar florals.',
-      imageUrl: 'https://images.unsplash.com/photo-1519869325930-281384150729?q=80&w=600&auto=format&fit=crop'
+      imageUrl: '/images/cake_wedding_floral.jpeg'
     },
     {
       title: 'Customized Designs',
       icon: <Gift size={20} className="gold-text" />,
       description: 'Have a completely unique concept? Hand-draw a design or send us references, and we will co-create your custom dessert.',
-      imageUrl: '/images/chocolate_cake.png' // Real image
+      imageUrl: '/images/cake_anniversary_yellow.jpeg'
     }
   ];
 

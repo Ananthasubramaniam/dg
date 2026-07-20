@@ -2,27 +2,29 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ChevronLeft, ChevronRight, Maximize2, ExternalLink } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight, Maximize2 } from 'lucide-react';
 
 interface GalleryItem {
   id: string;
-  category: 'cakes' | 'cupcakes-muffins' | 'cookies' | 'breads' | 'pizza' | 'instagram';
+  category: 'cakes' | 'cupcakes-muffins' | 'cookies' | 'breads' | 'pizza';
   categoryLabel: string;
   title: string;
   image: string;
-  isInstagram?: boolean;
-  instagramCaption?: string;
-  instagramUrl?: string;
 }
 
 export const Gallery: React.FC = () => {
   const [selectedFilter, setSelectedFilter] = useState<string>('all');
   const [activeImageIndex, setActiveImageIndex] = useState<number | null>(null);
+  const [prevImageIndex, setPrevImageIndex] = useState<number | null>(null);
   const [isImageLoading, setIsImageLoading] = useState(true);
+
+  if (activeImageIndex !== prevImageIndex) {
+    setPrevImageIndex(activeImageIndex);
+    setIsImageLoading(true);
+  }
 
   useEffect(() => {
     if (activeImageIndex !== null) {
-      setIsImageLoading(true);
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = '';
@@ -38,8 +40,7 @@ export const Gallery: React.FC = () => {
     { id: 'cupcakes-muffins', label: 'Cupcakes & Muffins' },
     { id: 'cookies', label: 'Cookies' },
     { id: 'breads', label: 'Breads' },
-    { id: 'pizza', label: 'Pizza' },
-    { id: 'instagram', label: '📸 Real Instagram Feed' }
+    { id: 'pizza', label: 'Pizza' }
   ];
 
   const galleryItems: GalleryItem[] = [
@@ -48,93 +49,63 @@ export const Gallery: React.FC = () => {
       category: 'cakes',
       categoryLabel: 'Cakes',
       title: 'Double Chocolate Ganache Signature Cake',
-      image: '/images/chocolate_cake.png'
+      image: '/images/cake_chocolate_ganache.jpeg'
     },
     {
       id: 'gal-2',
       category: 'cupcakes-muffins',
       categoryLabel: 'Muffins',
       title: 'Fresh Blueberry Streusel Muffins',
-      image: 'https://images.unsplash.com/photo-1607958996333-41aef7caefaa?q=80&w=800&auto=format&fit=crop'
+      image: '/images/muffin_almond.jpeg'
     },
     {
       id: 'gal-3',
       category: 'cookies',
       categoryLabel: 'Cookies',
       title: 'Chef\'s Special Chocolate Chip Butter Cookies',
-      image: '/images/cookies.png'
+      image: '/images/cookie_chocolate_chip.jpeg'
     },
     {
       id: 'gal-4',
       category: 'breads',
       categoryLabel: 'Breads',
-      title: 'Ligurian Herbs & Tomato Focaccia',
-      image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=800&auto=format&fit=crop'
+      title: 'Braided Herb Bread',
+      image: '/images/bread_braided.jpeg'
     },
     {
       id: 'gal-5',
       category: 'cakes',
       categoryLabel: 'Custom Cake',
       title: 'Bespoke Sugar Floral Celebration Cake',
-      image: 'https://images.unsplash.com/photo-1535141192574-5d4897c13636?q=80&w=800&auto=format&fit=crop'
+      image: '/images/cake_wedding_floral.jpeg'
     },
     {
       id: 'gal-6',
       category: 'pizza',
       categoryLabel: 'Pizza',
-      title: 'Gourmet Hand-Tossed Pizza Base',
-      image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=800&auto=format&fit=crop'
+      title: 'Gourmet Veggie Pizza',
+      image: '/images/pizza_veggie.jpeg'
     },
     {
       id: 'gal-7',
       category: 'cupcakes-muffins',
-      categoryLabel: 'Cupcakes',
-      title: 'Red Velvet Cream Cheese Frosted Cupcakes',
-      image: 'https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?q=80&w=800&auto=format&fit=crop'
+      categoryLabel: 'Muffins',
+      title: 'Double Chocolate Chip Muffins',
+      image: '/images/muffin_chocolate_close.jpeg'
     },
     {
       id: 'gal-8',
       category: 'breads',
       categoryLabel: 'Breads',
       title: 'Overnight Fermented Artisan Boule',
-      image: 'https://images.unsplash.com/photo-1549931319-a545dcf3bc73?q=80&w=800&auto=format&fit=crop'
+      image: '/images/bread_artisan_boule.jpeg'
     },
     {
       id: 'gal-9',
       category: 'cakes',
       categoryLabel: 'Cakes',
-      title: 'Double Chocolate Fudge Cake layers',
-      image: '/images/cheesecakes.png'
-    },
-    {
-      id: 'gal-10',
-      category: 'instagram',
-      categoryLabel: 'Instagram Post',
-      title: 'Fudgy Brownie Delights',
-      image: '/images/brownies.png',
-      isInstagram: true,
-      instagramCaption: 'Fudgy, gooey, and packed with dark chocolate chunks. Our signature Fudgy Brownies are always baked fresh to order in Wakad. 🍫✨ #brownies #punehomebaker #dessertgroove',
-      instagramUrl: 'https://www.instagram.com/dessert_groove/'
-    },
-    {
-      id: 'gal-11',
-      category: 'instagram',
-      categoryLabel: 'Instagram Post',
-      title: 'Belgian Chocolate Jars',
-      image: '/images/dessert_jars.png',
-      isInstagram: true,
-      instagramCaption: 'Layer upon layer of rich Belgian chocolate ganache and chocolate mousse. Perfect individual dessert jars for your next corporate party or weekend indulgence. 😋🥛 #dessertjars #chocolateganache #punebakery',
-      instagramUrl: 'https://www.instagram.com/dessert_groove/'
-    },
-    {
-      id: 'gal-12',
-      category: 'instagram',
-      categoryLabel: 'Instagram Post',
-      title: 'Chef Subha\'s Kitchen Prep',
-      image: '/images/seasonal_specials.png',
-      isInstagram: true,
-      instagramCaption: 'Berry specials in progress! We use only fresh seasonal fruits and premium butter in all our cakes. Sourced fresh, baked fresh. 🍓🎂 #seasonal cakes #naturalbaking #egglesscakespune',
-      instagramUrl: 'https://www.instagram.com/dessert_groove/'
+      title: 'Traditional Black Forest Cake',
+      image: '/images/cake_black_forest.jpeg'
     }
   ];
 
@@ -170,7 +141,7 @@ export const Gallery: React.FC = () => {
           <h2 className="section-title">Dessert Groove Gallery</h2>
           <div className="section-divider" />
           <p className="section-description">
-            Experience our actual bakes, custom customer orders, and real Instagram highlights straight from Chef Subha Srihari&apos;s kitchen in Pune.
+            Experience our actual bakes, custom customer orders, and signature creations straight from Chef Subha Srihari&apos;s kitchen in Pune.
           </p>
         </div>
 
@@ -197,59 +168,6 @@ export const Gallery: React.FC = () => {
         >
           <AnimatePresence mode="popLayout">
             {filteredItems.map((item, index) => {
-              if (item.isInstagram) {
-                return (
-                  <motion.div
-                    key={item.id}
-                    layout
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 20 }}
-                    transition={{ duration: 0.3 }}
-                    className="gallery-masonry-item instagram-post-card card-hover"
-                  >
-                    <div className="instagram-card-header">
-                      <div className="insta-profile-avatar flex-center">DG</div>
-                      <div className="insta-profile-info">
-                        <span className="insta-profile-name">dessert_groove</span>
-                        <span className="insta-profile-loc">Pune, India</span>
-                      </div>
-                      <a 
-                        href={item.instagramUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="insta-external-link"
-                        aria-label="View post on Instagram"
-                      >
-                        <ExternalLink size={16} />
-                      </a>
-                    </div>
-                    
-                    <div className="insta-card-img-wrapper" onClick={() => setActiveImageIndex(index)}>
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={item.image} alt={item.title} className="insta-post-img" loading="lazy" />
-                      <div className="insta-img-hover flex-center">
-                        <Maximize2 size={20} />
-                      </div>
-                    </div>
-
-                    <div className="insta-card-footer">
-                      <p className="insta-post-caption">
-                        <strong>dessert_groove</strong> {item.instagramCaption}
-                      </p>
-                      <a 
-                        href={item.instagramUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="insta-view-btn"
-                      >
-                        View on Instagram
-                      </a>
-                    </div>
-                  </motion.div>
-                );
-              }
-
               return (
                 <motion.div
                   key={item.id}
@@ -339,7 +257,6 @@ export const Gallery: React.FC = () => {
                       </svg>
                     </div>
                   )}
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <motion.img 
                     src={filteredItems[activeImageIndex].image} 
                     alt={filteredItems[activeImageIndex].title} 
@@ -358,11 +275,6 @@ export const Gallery: React.FC = () => {
                   <h4 className="lightbox-title">
                     {filteredItems[activeImageIndex].title}
                   </h4>
-                  {filteredItems[activeImageIndex].isInstagram && (
-                    <p className="lightbox-insta-details" style={{ marginTop: '8px', fontSize: '0.85rem', color: 'rgba(255, 255, 255, 0.7)', fontStyle: 'italic' }}>
-                      {filteredItems[activeImageIndex].instagramCaption}
-                    </p>
-                  )}
                 </div>
               </motion.div>
             </div>

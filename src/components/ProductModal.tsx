@@ -1,20 +1,20 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useCart } from '../context/CartContext';
 import { X, Minus, Plus, ShoppingBag } from 'lucide-react';
 
 export const ProductModal: React.FC = () => {
   const { activeDetailsProduct, setActiveDetailsProduct, addToCart } = useCart();
+  const [prevProductId, setPrevProductId] = useState<string | null>(null);
   const [quantity, setQuantity] = useState(1);
 
-  // Reset quantity when modal opens for a new product
-  useEffect(() => {
-    if (activeDetailsProduct) {
-      setQuantity(1);
-    }
-  }, [activeDetailsProduct]);
+  const currentProductId = activeDetailsProduct?.id ?? null;
+  if (currentProductId !== prevProductId) {
+    setPrevProductId(currentProductId);
+    setQuantity(1);
+  }
 
   if (!activeDetailsProduct) return null;
 

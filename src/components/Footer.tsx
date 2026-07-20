@@ -47,7 +47,6 @@ export const Footer: React.FC = () => {
   };
 
   const whatsappNumber = '919158555032';
-  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=Hi%20Dessert%20Groove,%20I'd%20like%20to%20place%20an%20order!`;
   const orderWhatsappUrl = `https://wa.me/${whatsappNumber}?text=Hi,%20I'd%20like%20to%20order`;
   const instagramUrl = 'https://instagram.com/dessert_groove'; // Placeholder link
 
@@ -110,7 +109,7 @@ export const Footer: React.FC = () => {
               <ul className="footer-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#featured">Featured</a></li>
-                <li><a href="#menu">Menu</a></li>
+                <li><a href="#quick-menu">Menu</a></li>
                 <li><a href="#custom-cakes">Custom Cakes</a></li>
                 <li><a href="#gallery">Gallery</a></li>
               </ul>

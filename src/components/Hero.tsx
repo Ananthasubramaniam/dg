@@ -129,7 +129,7 @@ export const Hero: React.FC<HeroProps> = ({ startAnimation }) => {
             transition={{ duration: 0.8, ease: 'easeOut', delay: 0.85 }}
             className="hero-actions"
           >
-            <a href="#menu" className="btn-primary">
+            <a href="#quick-menu" className="btn-primary">
               Explore Menu
             </a>
             <a 

@@ -38,7 +38,10 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
     const savedCart = localStorage.getItem('dessert_groove_cart');
     if (savedCart) {
       try {
-        setCart(JSON.parse(savedCart));
+        const parsed = JSON.parse(savedCart);
+        setTimeout(() => {
+          setCart(parsed);
+        }, 0);
       } catch (e) {
         console.error('Failed to parse cart from localStorage', e);
       }
@@ -113,6 +116,7 @@ Thank you.`;
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
     window.open(whatsappUrl, '_blank');
+    clearCart();
   };
 
   return (

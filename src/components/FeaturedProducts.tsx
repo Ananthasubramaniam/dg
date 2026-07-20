@@ -109,7 +109,7 @@ export const FeaturedProducts: React.FC = () => {
         </div>
 
         <div className="featured-more text-center">
-          <a href="#menu" className="btn-secondary">
+          <a href="#quick-menu" className="btn-secondary">
             Explore Full Menu
           </a>
         </div>

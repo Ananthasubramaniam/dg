@@ -157,7 +157,7 @@ Keep it up Dessert grove!`
         {/* Call to review */}
         <div className="reviews-footer text-center" style={{ marginTop: '40px' }}>
           <a 
-            href="https://maps.google.com" 
+            href="https://www.google.com/search?sca_esv=d51e216af84ce14e&rlz=1C1VDKB_en-GBIN1186IN1186&sxsrf=APpeQnuiZTE8tu9RNEsaK4X9BR3gqO_GMg:1784558558319&si=APenkKm7iecQ4G6P-TsbSMFKIQtv3EFIqRAFw-i8uEbk55Z-_2F02eQ1tC8gnp21qIOMmXuoDwR5RVqF66tF4y32V-CLWQlTr9veb3c7dY50U8PkusGuQfiJHcmtRs5nPJHBHgWv75Ow&q=Dessert+Groove+Reviews&sa=X&ved=2ahUKEwio9cvXvuGVAxVGfWwGHXI8C7EQ0bkNegQIMxAF&biw=1536&bih=826&dpr=1.25#lrd=0x3bc2b969085f4edf:0x38bae8a8bb8c85c8,3,,,," 
             target="_blank" 
             rel="noopener noreferrer" 
             className="btn-secondary"

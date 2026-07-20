@@ -30,8 +30,8 @@ export const MENU_DATA: MenuItem[] = [
     price: 550,
     unit: 'Half Kg',
     description: 'Layered chocolate sponge soaked in cherry syrup, frosted with fresh whipped cream and rich dark chocolate shavings.',
-    image: 'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?q=80&w=600&auto=format&fit=crop',
-    isFeatured: false
+    image: '/images/cake_black_forest.jpeg',
+    isFeatured: true
   },
   {
     id: 'cake-chocolate-ganache',
@@ -40,7 +40,7 @@ export const MENU_DATA: MenuItem[] = [
     price: 725,
     unit: 'Half Kg',
     description: 'Decadent dark chocolate sponge layered and glazed with silky, rich Belgian chocolate ganache. A chocolate lover\'s dream.',
-    image: '/images/chocolate_cake.png',
+    image: '/images/cake_chocolate_ganache.jpeg',
     isFeatured: true
   },
   {
@@ -50,7 +50,7 @@ export const MENU_DATA: MenuItem[] = [
     price: 650,
     unit: 'Half Kg',
     description: 'Light, airy chocolate mousse layers paired with a moist chocolate sponge, finished with dark cocoa dusting.',
-    image: 'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?q=80&w=600&auto=format&fit=crop',
+    image: '/images/cake_chocolate_mousse.jpeg',
     isFeatured: false
   },
   {
@@ -60,7 +60,7 @@ export const MENU_DATA: MenuItem[] = [
     price: 650,
     unit: 'Half Kg',
     description: 'Vanilla and chocolate cake layers loaded with crushed chocolate sandwich cookies and smooth Oreo cream frosting.',
-    image: 'https://images.unsplash.com/photo-1588796802095-263d894b9f91?q=80&w=600&auto=format&fit=crop',
+    image: '/images/cake_cookie_cream.jpeg',
     isFeatured: false
   },
   {
@@ -70,7 +70,7 @@ export const MENU_DATA: MenuItem[] = [
     price: 650,
     unit: 'Half Kg',
     description: 'A harmonious blend of rich chocolate sponge infused with citrusy orange zest and premium milk chocolate frosting.',
-    image: 'https://images.unsplash.com/photo-1542826438-bd32f43d626f?q=80&w=600&auto=format&fit=crop',
+    image: '/images/cake_chocolate_orange.jpeg',
     isFeatured: false
   },
   {
@@ -80,7 +80,7 @@ export const MENU_DATA: MenuItem[] = [
     price: 625,
     unit: 'Half Kg',
     description: 'Moist chocolate cake studded with chocolate chips, chocolate chunks, and a drizzle of rich fudge syrup.',
-    image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=600&auto=format&fit=crop',
+    image: '/images/cake_chocolate_tit_bits.jpeg',
     isFeatured: false
   },
   {
@@ -90,7 +90,7 @@ export const MENU_DATA: MenuItem[] = [
     price: 625,
     unit: 'Half Kg',
     description: 'Rich espresso-infused sponge cake layered with coffee buttercream and studded with toasted walnut pieces.',
-    image: 'https://images.unsplash.com/photo-1508737804141-4c3b688e2546?q=80&w=600&auto=format&fit=crop',
+    image: '/images/cake_coffee_walnut.jpeg',
     isFeatured: false
   },
   {
@@ -100,7 +100,7 @@ export const MENU_DATA: MenuItem[] = [
     price: 725,
     unit: 'Half Kg',
     description: 'Moist chocolate sponge soaked in smooth Irish cream flavor, layered with velvet espresso buttercream.',
-    image: 'https://images.unsplash.com/photo-1582293041079-7814c2f12063?q=80&w=600&auto=format&fit=crop',
+    image: '/images/cake_chocolate_gold.jpeg',
     isFeatured: true
   },
   {
@@ -110,7 +110,7 @@ export const MENU_DATA: MenuItem[] = [
     price: 550,
     unit: 'Half Kg',
     description: 'Soft cardamom-infused sponge cake soaked in traditional sweet rose milk and topped with edible rose petals.',
-    image: 'https://images.unsplash.com/photo-1519869325930-281384150729?q=80&w=600&auto=format&fit=crop',
+    image: '/images/cake_rose_milk.jpeg',
     isFeatured: false
   },
   {
@@ -121,7 +121,7 @@ export const MENU_DATA: MenuItem[] = [
     unit: 'Half Kg',
     description: 'Fusion dessert cake featuring cardamom sponge, saffron cream, and actual gulab jamun pieces inside.',
     image: '/images/cheesecakes.png',
-    isFeatured: true
+    isFeatured: false
   },
   {
     id: 'cake-lemon-blueberry',
@@ -130,7 +130,7 @@ export const MENU_DATA: MenuItem[] = [
     price: 625,
     unit: 'Half Kg',
     description: 'Zesty lemon sponge baked with fresh blueberries and topped with a buttery, crispy streusel crumble.',
-    image: 'https://images.unsplash.com/photo-1621303837174-89787a7d4729?q=80&w=600&auto=format&fit=crop',
+    image: '/images/cake_lemon_blueberry.jpeg',
     isFeatured: false
   },
   {
@@ -150,7 +150,7 @@ export const MENU_DATA: MenuItem[] = [
     price: 600,
     unit: 'Half Kg',
     description: 'Classic golden sponge layered with butterscotch cream, praline crunch, and topped with rich butterscotch caramel drizzle.',
-    image: 'https://images.unsplash.com/photo-1535141192574-5d4897c13636?q=80&w=600&auto=format&fit=crop',
+    image: '/images/cake_butterscotch.jpeg',
     isFeatured: false
   },
   {
@@ -160,7 +160,7 @@ export const MENU_DATA: MenuItem[] = [
     price: 575,
     unit: 'Half Kg',
     description: 'A warm cinnamon and espresso cake finished with a crunchy brown sugar crumble topping.',
-    image: 'https://images.unsplash.com/photo-1516685018646-549198525c1b?q=80&w=600&auto=format&fit=crop',
+    image: '/images/cake_coffee_crumble.jpeg',
     isFeatured: false
   },
   {
@@ -170,7 +170,7 @@ export const MENU_DATA: MenuItem[] = [
     price: 575,
     unit: 'Half Kg',
     description: 'Moist citrus cake made with fresh orange juice and orange zest, glazed with a light orange glaze.',
-    image: 'https://images.unsplash.com/photo-1614707267537-b85acf00c4b8?q=80&w=600&auto=format&fit=crop',
+    image: '/images/cake_orange.jpeg',
     isFeatured: false
   },
   {
@@ -180,7 +180,7 @@ export const MENU_DATA: MenuItem[] = [
     price: 575,
     unit: 'Half Kg',
     description: 'Soft vanilla sponge layered with juicy pineapple chunks, fresh whipped cream, and cherry toppings.',
-    image: 'https://images.unsplash.com/photo-1622896784083-cc051313dbab?q=80&w=600&auto=format&fit=crop',
+    image: '/images/cake_pineapple.jpeg',
     isFeatured: false
   },
 
@@ -203,7 +203,7 @@ export const MENU_DATA: MenuItem[] = [
     unit: 'Pc',
     description: 'Ultra-fudgy brownie loaded with chocolate chunks, featuring a crackly top and moist center.',
     image: '/images/brownies.png',
-    isFeatured: true
+    isFeatured: false
   },
   {
     id: 'bite-apple-pie',
@@ -212,8 +212,8 @@ export const MENU_DATA: MenuItem[] = [
     price: 110,
     unit: 'Pc',
     description: 'Classic mini pie filled with spiced apples and topped with a sweet, buttery streusel crumble.',
-    image: 'https://images.unsplash.com/photo-1519915028121-7d3463d20b13?q=80&w=600&auto=format&fit=crop',
-    isFeatured: false
+    image: '/images/pie_apple.jpeg',
+    isFeatured: true
   },
 
   // --- MUFFINS ---
@@ -224,7 +224,7 @@ export const MENU_DATA: MenuItem[] = [
     price: 55,
     unit: 'Pc',
     description: 'Espresso muffin topped with toasted walnuts and a crunchy cinnamon streusel.',
-    image: 'https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=600&auto=format&fit=crop',
+    image: '/images/muffin_coffee_walnut.jpeg',
     isFeatured: false
   },
   {
@@ -234,7 +234,7 @@ export const MENU_DATA: MenuItem[] = [
     price: 55,
     unit: 'Pc',
     description: 'Rich chocolate muffin with a nutella core, topped with hazelnut crumbs.',
-    image: 'https://images.unsplash.com/photo-1607958996333-41aef7caefaa?q=80&w=600&auto=format&fit=crop',
+    image: '/images/muffin_choc_hazelnut.jpeg',
     isFeatured: false
   },
   {
@@ -244,8 +244,8 @@ export const MENU_DATA: MenuItem[] = [
     price: 55,
     unit: 'Pc',
     description: 'Decadent chocolate muffin loaded with both dark and milk chocolate chips.',
-    image: 'https://images.unsplash.com/photo-1587974928442-77ad9e2db5ad?q=80&w=600&auto=format&fit=crop',
-    isFeatured: false
+    image: '/images/muffin_chocolate_close.jpeg',
+    isFeatured: true
   },
   {
     id: 'muffin-blueberry',
@@ -254,7 +254,7 @@ export const MENU_DATA: MenuItem[] = [
     price: 50,
     unit: 'Pc',
     description: 'Soft and moist bakery-style muffin bursting with fresh sweet blueberries.',
-    image: 'https://images.unsplash.com/photo-1607958996333-41aef7caefaa?q=80&w=600&auto=format&fit=crop',
+    image: '/images/muffin_almond.jpeg',
     isFeatured: true
   },
   {
@@ -264,7 +264,7 @@ export const MENU_DATA: MenuItem[] = [
     price: 50,
     unit: 'Pc',
     description: 'Sweet banana muffin loaded with chocolate chips, incredibly moist and flavorful.',
-    image: 'https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=600&auto=format&fit=crop',
+    image: '/images/muffin_banana_choc.jpeg',
     isFeatured: false
   },
 
@@ -276,7 +276,7 @@ export const MENU_DATA: MenuItem[] = [
     price: 55,
     unit: 'Pc',
     description: 'Rich chocolate sponge topped with a velvety chocolate buttercream swirl.',
-    image: 'https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?q=80&w=600&auto=format&fit=crop',
+    image: '/images/cupcake_chocolate.jpeg',
     isFeatured: false
   },
   {
@@ -286,7 +286,7 @@ export const MENU_DATA: MenuItem[] = [
     price: 55,
     unit: 'Pc',
     description: 'Moist coffee sponge topped with a rich, aromatic espresso buttercream frosting.',
-    image: 'https://images.unsplash.com/photo-1614707267537-b85acf00c4b8?q=80&w=600&auto=format&fit=crop',
+    image: '/images/cupcake_coffee.jpeg',
     isFeatured: false
   },
   {
@@ -296,7 +296,7 @@ export const MENU_DATA: MenuItem[] = [
     price: 55,
     unit: 'Pc',
     description: 'Classic Madagascar vanilla bean cupcake topped with fluffy vanilla buttercream.',
-    image: 'https://images.unsplash.com/photo-1550617931-e17a7b70dce2?q=80&w=600&auto=format&fit=crop',
+    image: '/images/cupcake_vanilla.jpeg',
     isFeatured: false
   },
   {
@@ -306,7 +306,7 @@ export const MENU_DATA: MenuItem[] = [
     price: 55,
     unit: 'Pc',
     description: 'Golden caramel cupcake topped with butterscotch frosting and home-made praline crunch.',
-    image: 'https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?q=80&w=600&auto=format&fit=crop',
+    image: '/images/cupcake_butterscotch.jpeg',
     isFeatured: false
   },
   {
@@ -316,7 +316,7 @@ export const MENU_DATA: MenuItem[] = [
     price: 55,
     unit: 'Pc',
     description: 'Tangy lemon cupcake filled with fresh blueberry jam and topped with zesty frosting.',
-    image: 'https://images.unsplash.com/photo-1614707267537-b85acf00c4b8?q=80&w=600&auto=format&fit=crop',
+    image: '/images/cupcake_lemon_blue.jpeg',
     isFeatured: false
   },
   {
@@ -326,8 +326,8 @@ export const MENU_DATA: MenuItem[] = [
     price: 55,
     unit: 'Pc',
     description: 'Classic red velvet cupcake topped with a generous swirl of sweet and tangy cream cheese frosting.',
-    image: 'https://images.unsplash.com/photo-1614707267537-b85acf00c4b8?q=80&w=600&auto=format&fit=crop',
-    isFeatured: true
+    image: '/images/cupcake_red_velvet.jpeg',
+    isFeatured: false
   },
 
   // --- COOKIES ---
@@ -338,7 +338,7 @@ export const MENU_DATA: MenuItem[] = [
     price: 12,
     unit: 'Pc',
     description: 'Delicate buttery biscuit flavored with fragrant rose water and studded with crunchy walnut bits.',
-    image: '/images/cookies.png',
+    image: '/images/cookie_rose_walnut.jpeg',
     isFeatured: false
   },
   {
@@ -348,7 +348,7 @@ export const MENU_DATA: MenuItem[] = [
     price: 30,
     unit: 'Pc',
     description: 'Classic crispy-edged, chewy-centered cookie loaded with premium semi-sweet chocolate chips.',
-    image: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?q=80&w=600&auto=format&fit=crop',
+    image: '/images/cookie_chocolate_chip.jpeg',
     isFeatured: true
   },
   {
@@ -358,7 +358,7 @@ export const MENU_DATA: MenuItem[] = [
     price: 10,
     unit: 'Pc',
     description: 'Melt-in-your-mouth shortbread cookie made with premium high-fat butter.',
-    image: 'https://images.unsplash.com/photo-1558961309-db6f1a3ec609?q=80&w=600&auto=format&fit=crop',
+    image: '/images/cookie_butter.jpeg',
     isFeatured: false
   },
   {
@@ -368,7 +368,7 @@ export const MENU_DATA: MenuItem[] = [
     price: 10,
     unit: 'Pc',
     description: 'Traditional Indian cardamom shortbread biscuit with a crumbly, melt-in-your-mouth texture.',
-    image: 'https://images.unsplash.com/photo-1558961309-db6f1a3ec609?q=80&w=600&auto=format&fit=crop',
+    image: '/images/cookie_nan_khatta.jpeg',
     isFeatured: false
   },
   {
@@ -378,7 +378,7 @@ export const MENU_DATA: MenuItem[] = [
     price: 12,
     unit: 'Pc',
     description: 'Famous buttery and sweet British-style biscuit with a hint of lemon and nutmeg.',
-    image: 'https://images.unsplash.com/photo-1558961309-db6f1a3ec609?q=80&w=600&auto=format&fit=crop',
+    image: '/images/cookie_shrewsbury.jpeg',
     isFeatured: false
   },
 
@@ -390,8 +390,8 @@ export const MENU_DATA: MenuItem[] = [
     price: 200,
     unit: 'Loaf',
     description: 'Nutritious cake baked with organic sprouted ragi, whole wheat flour, and sweetened naturally with iron-rich jaggery.',
-    image: 'https://images.unsplash.com/photo-1598214886806-c87b2a370944?q=80&w=600&auto=format&fit=crop',
-    isFeatured: true
+    image: '/images/health_ragi_jaggery.jpeg',
+    isFeatured: false
   },
   {
     id: 'health-double-choc',
@@ -400,7 +400,7 @@ export const MENU_DATA: MenuItem[] = [
     price: 200,
     unit: 'Box',
     description: 'Healthy cookies made from 100% whole wheat flour, rich cocoa powder, and dark chocolate chips.',
-    image: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?q=80&w=600&auto=format&fit=crop',
+    image: '/images/health_double_choc.jpeg',
     isFeatured: false
   },
   {
@@ -410,7 +410,7 @@ export const MENU_DATA: MenuItem[] = [
     price: 150,
     unit: 'Box',
     description: 'Crispy whole wheat cookies loaded with toasted coconut flakes, sweet and aromatic.',
-    image: 'https://images.unsplash.com/photo-1558961309-db6f1a3ec609?q=80&w=600&auto=format&fit=crop',
+    image: '/images/health_coconut.jpeg',
     isFeatured: false
   },
   {
@@ -420,7 +420,7 @@ export const MENU_DATA: MenuItem[] = [
     price: 210,
     unit: 'Box',
     description: 'A allergen-friendly powerhouse packed with tart cranberries, dark chocolate chips, and shredded coconut.',
-    image: 'https://images.unsplash.com/photo-1598214886806-c87b2a370944?q=80&w=600&auto=format&fit=crop',
+    image: '/images/health_gf_cranberry.jpeg  ',
     isFeatured: false
   },
 
@@ -432,8 +432,8 @@ export const MENU_DATA: MenuItem[] = [
     price: 375,
     unit: 'Loaf',
     description: 'Rich, dense, and moist traditional tea cake made with caramelized milk solids (mawa) and cardamom.',
-    image: 'https://images.unsplash.com/photo-1582293041079-7814c2f12063?q=80&w=600&auto=format&fit=crop',
-    isFeatured: true
+    image: '/images/tea-cake_parsi_mawa.jpeg',
+    isFeatured: false
   },
   {
     id: 'tea-banana-choc',
@@ -442,7 +442,7 @@ export const MENU_DATA: MenuItem[] = [
     price: 300,
     unit: 'Loaf',
     description: 'Perfectly sweet, moist banana loaf loaded with dark chocolate chips. Ideal with afternoon tea.',
-    image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=600&auto=format&fit=crop',
+    image: '  /images/tea_banana_choc.jpeg',
     isFeatured: false
   },
   {
@@ -452,7 +452,7 @@ export const MENU_DATA: MenuItem[] = [
     price: 300,
     unit: 'Loaf',
     description: 'Elegantly striped marble cake with alternating layers of vanilla and chocolate sponge.',
-    image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=600&auto=format&fit=crop',
+    image: '/images/tea_zebra.jpeg',
     isFeatured: false
   },
   {
@@ -462,7 +462,7 @@ export const MENU_DATA: MenuItem[] = [
     price: 375,
     unit: 'Loaf',
     description: 'Classic British sponge cake with a firm yet light texture, subtly flavored with lemon zest.',
-    image: 'https://images.unsplash.com/photo-1582293041079-7814c2f12063?q=80&w=600&auto=format&fit=crop',
+    image: '/images/tea_madeira.jpeg',
     isFeatured: false
   },
 
@@ -474,8 +474,8 @@ export const MENU_DATA: MenuItem[] = [
     price: 90,
     unit: 'Loaf',
     description: 'Soft and healthy daily loaf baked with 100% stoneground whole wheat flour. No preservatives.',
-    image: 'https://images.unsplash.com/photo-1549931319-a545dcf3bc73?q=80&w=600&auto=format&fit=crop',
-    isFeatured: true
+    image: '/images/bread_whole_wheat.jpeg',
+    isFeatured: false
   },
   {
     id: 'bread-burger-buns',
@@ -484,7 +484,7 @@ export const MENU_DATA: MenuItem[] = [
     price: 25,
     unit: 'Pack of 2',
     description: 'Soft, brioche-style sesame burger buns, baked fresh daily.',
-    image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=600&auto=format&fit=crop',
+    image: '/images/bread_burger_buns.jpeg',
     isFeatured: false
   },
   {
@@ -494,7 +494,7 @@ export const MENU_DATA: MenuItem[] = [
     price: 12,
     unit: 'Pc',
     description: 'Super soft, fluffy, sweet Japanese-style milk buns.',
-    image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=600&auto=format&fit=crop',
+    image: '/images/bread_milk_buns.jpeg',
     isFeatured: false
   },
   {
@@ -504,7 +504,7 @@ export const MENU_DATA: MenuItem[] = [
     price: 15,
     unit: 'Pc',
     description: 'Authentic stone-baked pocket pita bread, perfect for falafels and wraps.',
-    image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=600&auto=format&fit=crop',
+    image: '/images/bread_pita.jpeg',
     isFeatured: false
   },
   {
@@ -514,7 +514,7 @@ export const MENU_DATA: MenuItem[] = [
     price: 150,
     unit: 'Loaf',
     description: 'Ligurian-style flatbread topped with cherry tomatoes, kalamata olives, rosemary, and sea salt.',
-    image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=600&auto=format&fit=crop',
+    image: '/images/bread_focaccia_topped.jpeg',
     isFeatured: false
   },
   {
@@ -524,7 +524,7 @@ export const MENU_DATA: MenuItem[] = [
     price: 170,
     unit: 'Loaf',
     description: 'Overnight fermented flatbread with deep flavor bubbles, infused with olive oil and Italian herbs.',
-    image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=600&auto=format&fit=crop',
+    image: '/images/bread_focaccia_herbs.jpeg',
     isFeatured: false
   },
   {
@@ -534,8 +534,8 @@ export const MENU_DATA: MenuItem[] = [
     price: 150,
     unit: 'Loaf',
     description: 'Beautifully braided soft bread loaf filled with savory cheese, garlic, and fresh herb stuffing.',
-    image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=600&auto=format&fit=crop',
-    isFeatured: false
+    image: '/images/bread_braided.jpeg',
+    isFeatured: true
   },
 
   // --- PIZZA ---
@@ -546,7 +546,7 @@ export const MENU_DATA: MenuItem[] = [
     price: 260,
     unit: '8 inch',
     description: 'Individual 8-inch fresh dough pizza base topped with gourmet marinara sauce and premium mozzarella.',
-    image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=600&auto=format&fit=crop',
+    image: '/images/pizza_small.jpeg',
     isFeatured: false
   },
   {
@@ -556,7 +556,7 @@ export const MENU_DATA: MenuItem[] = [
     price: 330,
     unit: '10 inch',
     description: 'Classic 10-inch shareable fresh dough pizza base topped with gourmet marinara sauce and premium mozzarella.',
-    image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=600&auto=format&fit=crop',
+    image: '/images/pizza_veggie.jpeg',
     isFeatured: true
   },
   {
@@ -566,7 +566,7 @@ export const MENU_DATA: MenuItem[] = [
     price: 400,
     unit: '12 inch',
     description: 'Family-size 12-inch fresh dough pizza base topped with gourmet marinara sauce and premium mozzarella.',
-    image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=600&auto=format&fit=crop',
+    image: '/images/pizza_large.jpeg',
     isFeatured: false
   }
 ];

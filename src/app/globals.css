@@ -576,7 +576,7 @@ button {
   position: relative;
   width: 100%;
   max-width: 420px;
-  aspect-ratio: 4/5;
+  aspect-ratio: 2/3;
   border-radius: var(--border-radius-lg);
   overflow: hidden;
   border: 4px solid rgba(250, 246, 240, 0.1);
@@ -589,7 +589,8 @@ button {
 }
 .chef-caption-card {
   position: absolute;
-  bottom: 20px;
+  top: 20px;
+  bottom: auto;
   left: 20px;
   right: 20px;
   background: rgba(44, 27, 24, 0.95);
@@ -2552,4 +2553,91 @@ button {
 .layout-locked {
   max-height: 100vh;
   overflow: hidden;
+}
+
+/* Instagram Feed Section Below Gallery */
+.instagram-feed-section {
+  padding: 100px 0;
+  background-color: #fcf6f3; /* Visually distinct blush background tint */
+  border-top: 1px solid rgba(44, 27, 24, 0.04);
+  border-bottom: 1px solid rgba(44, 27, 24, 0.04);
+}
+.instagram-feed-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 50px;
+}
+@media (max-width: 768px) {
+  .instagram-feed-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto 40px auto;
+  }
+}
+.instagram-feed-card {
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  background-color: var(--color-white);
+  border: 1px solid rgba(44, 27, 24, 0.02);
+}
+.insta-feed-img-wrapper {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+.insta-feed-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+.instagram-feed-card:hover .insta-feed-img {
+  transform: scale(1.05);
+}
+.insta-feed-hover-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(44, 27, 24, 0.4);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+.instagram-feed-card:hover .insta-feed-hover-overlay {
+  opacity: 1;
+}
+.insta-feed-hover-icon {
+  color: var(--color-white);
+  transform: scale(0.8);
+  transition: transform var(--transition-normal);
+}
+.instagram-feed-card:hover .insta-feed-hover-icon {
+  color: var(--color-white);
+  transform: scale(1);
+}
+.instagram-follow-cta {
+  margin-top: 20px;
+}
+.instagram-follow-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-white);
+  background-color: var(--color-caramel);
+  border: 1px solid var(--color-caramel);
+  transition: all var(--transition-fast);
+  box-shadow: 0 4px 10px rgba(184, 142, 82, 0.2);
+}
+.instagram-follow-btn:hover {
+  background-color: var(--color-chocolate);
+  border-color: var(--color-chocolate);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(44, 27, 24, 0.3);
+}
+.instagram-follow-btn:active {
+  transform: translateY(0);
 }

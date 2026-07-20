@@ -7,9 +7,9 @@ import Hero from '../components/Hero';
 import FeaturedProducts from '../components/FeaturedProducts';
 import BehindDessertGroove from '../components/BehindDessertGroove';
 import CustomCakes from '../components/CustomCakes';
-import MenuSection from '../components/MenuSection';
 import QuickMenu from '../components/QuickMenu';
-// import Gallery from '../components/Gallery';
+import Gallery from '../components/Gallery';
+import InstagramSection from '../components/InstagramSection';
 import Testimonials from '../components/Testimonials';
 import FAQ from '../components/FAQ';
 import Footer from '../components/Footer';
@@ -34,10 +34,10 @@ export default function Home() {
           <Hero startAnimation={isLoaded} />
           <BehindDessertGroove />
           <FeaturedProducts />
-          <MenuSection />
           <QuickMenu />
           <CustomCakes />
-          {/* <Gallery /> */}
+          <Gallery />
+          <InstagramSection />
           <Testimonials />
           <FAQ />
         </main>
