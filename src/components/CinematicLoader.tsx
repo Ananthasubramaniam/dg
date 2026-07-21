@@ -269,11 +269,13 @@ export const CinematicLoader: React.FC<CinematicLoaderProps> = ({ onComplete }) 
             {/* Loading Status Indicator */}
             <p className="loader-status-text">Handcrafting Sweetness</p>
 
-            {/* Elegant Loader Counter */}
-            <div className="loader-counter">
-              <span className="counter-num">{Math.floor(progress)}</span>
-              <span className="counter-pct">%</span>
-            </div>
+            {/* Elegant Loader Counter - Only visible while actively counting */}
+            {!isExiting && progress > 0 && progress < 100 && (
+              <div className="loader-counter">
+                <span className="counter-num">{Math.floor(progress)}</span>
+                <span className="counter-pct">%</span>
+              </div>
+            )}
           </motion.div>
         )}
       </AnimatePresence>
