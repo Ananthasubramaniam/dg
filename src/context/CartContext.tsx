@@ -94,19 +94,18 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const triggerWhatsAppOrder = () => {
     if (cart.length === 0) return;
 
-    const phoneNumber = '919158555032';
+    const phoneNumber = '9158555032';
     
     let itemsText = '';
     cart.forEach((item) => {
       itemsText += `* ${item.product.name} x ${item.quantity} (₹${item.product.price * item.quantity})\n`;
     });
 
-    const message = `Hi Dessert Groove,
+    const message = `Hi Subha,
 
 I would like to place an order.
 
-*Items Ordered:*
-${itemsText}
+*Items Ordered:* ${itemsText}
 *Total Amount:* ₹${cartTotal}
 
 Please let me know the next steps.

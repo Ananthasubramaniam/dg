@@ -9,7 +9,7 @@ interface HeroProps {
 }
 
 export const Hero: React.FC<HeroProps> = ({ startAnimation }) => {
-  const generalWhatsappLink = 'https://wa.me/919158555032?text=Hi%20Dessert%20Groove,%20I\'d%20like%20to%20inquire%20about%20ordering%20some%20delicious%20cakes%20and%20desserts!';
+  const generalWhatsappLink = 'https://wa.me/919158555032?text=Hi%20Subha,%20I\'d%20like%20to%20inquire%20about%20ordering%20some%20delicious%20cakes%20and%20desserts!';
 
   // 3D Parallax Mouse Tracking
   const mouseX = useMotionValue(0);
