@@ -60,34 +60,7 @@ export const Footer: React.FC = () => {
   return (
     <>
       <footer id="contact" className="footer-area">
-        {/* Instagram Section */}
-        <div className="instagram-section container">
-          <div className="instagram-header text-center">
-            <InstagramIcon size={24} className="gold-text mb-2" />
-            <h3 className="instagram-title">Follow Us On Instagram</h3>
-            <p className="instagram-subtitle">
-              Get behind-the-scenes glimpses of Chef Subha Srihari&apos;s kitchen: <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="gold-text">@dessert_groove</a>
-            </p>
-          </div>
-          
-          <div className="instagram-grid">
-            {instagramImages.map((img, idx) => (
-              <a 
-                key={idx} 
-                href={instagramUrl} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="instagram-item card-hover"
-              >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={img.url} alt={img.alt} className="instagram-img" loading="lazy" />
-                <div className="instagram-overlay flex-center">
-                  <InstagramIcon size={28} className="instagram-hover-icon" />
-                </div>
-              </a>
-            ))}
-          </div>
-        </div>
+
 
         {/* Footer Top: Main Contact Block */}
         <div className="footer-top">
@@ -121,7 +94,7 @@ export const Footer: React.FC = () => {
               <ul className="contact-details-list">
                 <li className="contact-detail-item">
                   <MapPin size={18} className="gold-text shrink-0" />
-                  <span>Shop no 104, 1st floor, Park Street, Wakad, Pimpri-Chinchwad, Maharashtra 411057</span>
+                  <span>Shop No 104, , 1ST FLOOR, PARK IVORY SHOPPING COMPLEX, PARK STREET, WAKAD , PIMPRI CHICHWAD - 57</span>
                 </li>
                 <li className="contact-detail-item">
                   <Phone size={18} className="gold-text shrink-0" />
@@ -129,10 +102,10 @@ export const Footer: React.FC = () => {
                 </li>
                 <li className="contact-detail-item">
                   <Mail size={18} className="gold-text shrink-0" />
-                  <a href="mailto:subhalaskhmi.ganesan@gmail.com">subhalaskhmi.ganesan@gmail.com</a>
+                  <a href="mailto:subhaganesan@gmail.com">subhaganesan@gmail.com</a>
                 </li>
                 <li className="contact-detail-item">
-                  <Clock size={18} className="gold-text shrink-0" />
+                  <Clock size={18} className="gold-text shrink-0" />  
                   <span>Pre-order: 24/7 • Kitchen: 10 AM - 8 PM</span>
                 </li>
               </ul>

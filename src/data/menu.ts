@@ -209,8 +209,8 @@ export const MENU_DATA: MenuItem[] = [
     id: 'bite-apple-pie',
     name: 'Apple Pie with Streusel',
     category: 'dessert-bites',
-    price: 110,
-    unit: 'Pc',
+    price: 340,
+    unit: 'Half Kg',
     description: 'Classic mini pie filled with spiced apples and topped with a sweet, buttery streusel crumble.',
     image: '/images/pie_apple.jpeg',
     isFeatured: true

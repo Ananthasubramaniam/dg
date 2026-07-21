@@ -2068,6 +2068,12 @@ button {
 }
 .about-col .footer-logo {
   margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+.footer-logo .logo-dessert {
+  color: var(--color-cream);
 }
 .about-text {
   color: rgba(250, 246, 240, 0.7);
