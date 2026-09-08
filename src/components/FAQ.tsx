@@ -19,7 +19,7 @@ export const FAQ: React.FC = () => {
     },
     {
       question: 'How much notice is required?',
-      answer: 'Since we operate as a fresh pre-order bakery and don\'t store stale items, we bake everything from scratch. For standard menu items (cookies, muffins, cupcakes, breads), we require 24–48 hours notice. For custom cakes, fondant work, or bulk event orders, please place your order at least 3–5 days in advance.'
+      answer: 'Since we operate as micro bakery, all our baked goodies are made upon ORDER ONLY. We bake all our goodies from scratch. We would required a minimum of 2 days, maximum 1 day notice for any range of goodies listed in our website.'
     },
     {
       question: 'Do you make customized cakes?',

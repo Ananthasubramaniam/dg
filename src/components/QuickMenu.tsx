@@ -3,6 +3,8 @@
 import React from 'react';
 import { MENU_DATA, CATEGORIES, MenuItem } from '../data/menu';
 import { useCart } from '../context/CartContext';
+import { motion } from 'framer-motion';
+import { Leaf, Recycle } from 'lucide-react';
 
 export const QuickMenu: React.FC = () => {
   const { setActiveMenuCategory, setActiveDetailsProduct } = useCart();
@@ -21,7 +23,8 @@ export const QuickMenu: React.FC = () => {
           <h2 className="section-title">Quick Price List</h2>
           <div className="section-divider" />
           <p className="section-description">
-            For our repeat customers: a simplified, text-only list of our complete bakes and pricing.
+            New here? Here&apos;s how to order:<br />
+            <strong>Choose your items &rarr; Add to cart &rarr; Review your order &rarr; Confirm your order</strong>
           </p>
         </div>
 
@@ -105,6 +108,11 @@ export const QuickMenu: React.FC = () => {
                 <h3 className="quick-category-title">
                   <span className="category-icon">{category.icon}</span> {category.name}
                 </h3>
+                {'note' in category && category.note && (
+                  <p className="quick-category-note" style={{ fontSize: '0.8rem', color: 'var(--color-gold)', margin: '4px 0 8px 0', fontStyle: 'italic' }}>
+                    {category.note}
+                  </p>
+                )}
                 <div className="quick-category-divider" />
                 <ul className="quick-items-list">
                   {categoryItems.map((item) => (
@@ -126,9 +134,34 @@ export const QuickMenu: React.FC = () => {
             );
           })}
         </div>
+
+        {/* ELEGANT ECO-FRIENDLY KHADI PACKAGING NOTE BANNER BELOW QUICK MENU */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="eco-khadi-banner-warm mt-12"
+        >
+          <div className="eco-khadi-content-warm">
+            <div className="eco-badge-warm inline-flex items-center gap-1.5">
+              <Leaf size={14} className="gold-text" />
+              <span>100% Compostable Handmade Khadi Box</span>
+            </div>
+            <h3 className="eco-khadi-heading-warm">Eco-Friendly Packaging &amp; Refill Rewards</h3>
+            <p className="eco-khadi-text-warm">
+              Prices mentioned are inclusive of the box. Our boxes are crafted from <strong>handmade Khadi paper</strong> and pasted with <strong>tamarind seed gel</strong>. It is 100% compostable. Save your box and refill on your next purchase!
+            </p>
+            <div className="eco-khadi-tagline-warm flex-center gap-2">
+              <Recycle size={16} />
+              <span>SAVE PAPER! SAVE MONEY! ENJOY THE GOODNESS</span>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
 };
 
 export default QuickMenu;
+

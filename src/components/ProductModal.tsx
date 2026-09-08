@@ -111,7 +111,7 @@ export const ProductModal: React.FC = () => {
                     {/* Add Button */}
                     <button onClick={handleAdd} className="modal-add-action-btn">
                       <ShoppingBag size={18} />
-                      <span>Add to Order (₹{product.price * quantity})</span>
+                      <span>Add to Cart (₹{product.price * quantity})</span>
                     </button>
                   </div>
                 </div>

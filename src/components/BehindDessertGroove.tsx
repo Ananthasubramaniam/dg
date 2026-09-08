@@ -45,10 +45,10 @@ export const BehindDessertGroove: React.FC = () => {
                     That is how Dessert Groove was born. No venture capital, no massive industrial commercial kitchen. Me and my small IFB 30 Litre Convection Oven. Using this oven I had baked cake from 500 gms to 12kg. Years passed I felt with job and baking going hand in hand would be difficult.
                   </p>
                   <p>
-                    I quit my job as a full-time finance consultant to follow my passion. It started as a hobby, and it turned into my profession. I never imagined I would land up doing a full-time job as a chef and operating a kitchen, but I am glad I chose this path.
+                    I quit my job as a full-time finance consultant to follow my passion. It started as a hobby, and now I am a full-time baker. Dedicating about 8 hours a day, single handedly running the bakery. I never imagined I would land up doing a full-time job as a chef and operating a kitchen, but I am glad I chose this path.
                   </p>
                   <p>
-                    September 9th 2024, I opened a small Micro bakery at park street, waked. The core idea in running this micro bakery is to serve freshly baked goodies to customers.
+                    September 9th 2024, I opened a small Micro bakery at park street, wakad. The core idea in running this micro bakery is to serve freshly baked goodies to customers.
                   </p>
                   <p>
                     At Dessert Groove, we do not use commercial stabilizers, artificial premixes, or synthetic flavourings. All goodies are baked fresh from scratch using high-quality ingredients.

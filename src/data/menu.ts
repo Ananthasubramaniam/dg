@@ -11,12 +11,13 @@ export interface MenuItem {
 
 export const CATEGORIES = [
   { id: 'cakes', name: 'Cakes', icon: '🍰' },
+  { id: 'craft-chocolates', name: 'Craft Chocolates', icon: '🍫', note: 'Handmade Bean-to-Bar from native farmers' },
   { id: 'dessert-bites', name: 'Dessert Bites', icon: '🍪' },
   { id: 'muffins', name: 'Muffins', icon: '🧁' },
   { id: 'cupcakes', name: 'Cupcakes', icon: '🧁' },
   { id: 'cookies', name: 'Cookies', icon: '🍪' },
   { id: 'health-treats', name: 'Health Treats', icon: '🌱' },
-  { id: 'tea-cakes', name: 'Tea Cakes', icon: '🥮' },
+  { id: 'tea-cakes', name: 'Tea Cakes', icon: '🥮', note: 'Tea cakes are 500 gms approx.' },
   { id: 'breads', name: 'Breads', icon: '🍞' },
   { id: 'pizza', name: 'Pizza', icon: '🍕' }
 ] as const;
@@ -39,7 +40,7 @@ export const MENU_DATA: MenuItem[] = [
     category: 'cakes',
     price: 725,
     unit: 'Half Kg',
-    description: 'Decadent dark chocolate sponge layered and glazed with silky, rich Belgian chocolate ganache. A chocolate lover\'s dream.',
+    description: 'Decadent dark chocolate sponge layered and glazed with silky, rich chocolate ganache. A chocolate lover\'s dream.',
     image: '/images/cake_chocolate_ganache.jpeg',
     isFeatured: true
   },
@@ -97,9 +98,9 @@ export const MENU_DATA: MenuItem[] = [
     id: 'cake-irish-cream',
     name: 'Chocolate and Irish Cream',
     category: 'cakes',
-    price: 725,
+    price: 800,
     unit: 'Half Kg',
-    description: 'Moist chocolate sponge soaked in smooth Irish cream flavor, layered with velvet espresso buttercream.',
+    description: 'Moist chocolate sponge soaked in smooth Irish cream flavor, layered with rich chocolate ganache.',
     image: '/images/cake_chocolate_gold.jpeg',
     isFeatured: true
   },
@@ -164,23 +165,104 @@ export const MENU_DATA: MenuItem[] = [
     isFeatured: false
   },
   {
-    id: 'cake-orange',
-    name: 'Orange Cake',
-    category: 'cakes',
-    price: 575,
-    unit: 'Half Kg',
-    description: 'Moist citrus cake made with fresh orange juice and orange zest, glazed with a light orange glaze.',
-    image: '/images/cake_orange.jpeg',
-    isFeatured: false
-  },
-  {
     id: 'cake-pineapple',
     name: 'Pineapple Cake',
     category: 'cakes',
-    price: 575,
+    price: 550,
     unit: 'Half Kg',
     description: 'Soft vanilla sponge layered with juicy pineapple chunks, fresh whipped cream, and cherry toppings.',
     image: '/images/cake_pineapple.jpeg',
+    isFeatured: false
+  },
+  // --- CRAFT CHOCOLATES ---
+  {
+    id: 'choc-orange-sea-salt',
+    name: 'Orange Sea Salt',
+    category: 'craft-chocolates',
+    price: 230,
+    unit: 'Bar',
+    description: 'Artisanal dark chocolate infused with citrusy orange oil and coarse sea salt flakes.',
+    image: '/images/chocolate_bars.jpeg',
+    isFeatured: true
+  },
+  {
+    id: 'choc-mint-magic',
+    name: 'Mint Magic',
+    category: 'craft-chocolates',
+    price: 230,
+    unit: 'Bar',
+    description: 'Refreshing natural mint oil blended with smooth stone-ground dark chocolate.',
+    image: '/images/chocolate_bars.jpeg',
+    isFeatured: true
+  },
+  {
+    id: 'choc-unflavored-pure',
+    name: 'Unflavored Pure Chocolate',
+    category: 'craft-chocolates',
+    price: 220,
+    unit: 'Bar',
+    description: 'Pure, unadulterated bean-to-bar chocolate celebrating natural cacao nib flavors.',
+    image: '/images/chocolate_bars.jpeg',
+    isFeatured: false
+  },
+  {
+    id: 'choc-orange-plain',
+    name: 'Orange Plain',
+    category: 'craft-chocolates',
+    price: 220,
+    unit: 'Bar',
+    description: 'Smooth dark chocolate delicately flavored with natural zesty orange notes.',
+    image: '/images/chocolate_bars.jpeg',
+    isFeatured: false
+  },
+  {
+    id: 'choc-coffee-almond',
+    name: 'Coffee Almond',
+    category: 'craft-chocolates',
+    price: 240,
+    unit: 'Bar',
+    description: 'Roasted almond chunks paired with rich espresso-infused artisanal chocolate.',
+    image: '/images/chocolate_bars.jpeg',
+    isFeatured: true
+  },
+  {
+    id: 'choc-100-dark',
+    name: '100% Dark Chocolate',
+    category: 'craft-chocolates',
+    price: 220,
+    unit: 'Bar',
+    description: 'Zero added sugar, 100% pure cacao nibs stone-ground for 5 days.',
+    image: '/images/chocolate_bars.jpeg',
+    isFeatured: false
+  },
+  {
+    id: 'choc-bavarian-hazelnut',
+    name: 'Bavarian Hazelnut Chunks',
+    category: 'craft-chocolates',
+    price: 240,
+    unit: 'Bar',
+    description: 'Crunchy roasted Bavarian hazelnut chunks folded into rich dark chocolate.',
+    image: '/images/chocolate_bars.jpeg',
+    isFeatured: true
+  },
+  {
+    id: 'choc-berry-blast',
+    name: 'Berry Blast with Cranberries',
+    category: 'craft-chocolates',
+    price: 240,
+    unit: 'Bar',
+    description: 'Tart dried cranberries studded throughout smooth stone-ground dark chocolate.',
+    image: '/images/chocolate_bars.jpeg',
+    isFeatured: false
+  },
+  {
+    id: 'choc-coffee-hazelnut',
+    name: 'Coffee & Hazelnut',
+    category: 'craft-chocolates',
+    price: 240,
+    unit: 'Bar',
+    description: 'The ultimate pairing of aromatic coffee notes and crunchy roasted hazelnuts.',
+    image: '/images/chocolate_bars.jpeg',
     isFeatured: false
   },
 
@@ -209,9 +291,9 @@ export const MENU_DATA: MenuItem[] = [
     id: 'bite-apple-pie',
     name: 'Apple Pie with Streusel',
     category: 'dessert-bites',
-    price: 340,
-    unit: 'Half Kg',
-    description: 'Classic mini pie filled with spiced apples and topped with a sweet, buttery streusel crumble.',
+    price: 425,
+    unit: '600 Gms approx.',
+    description: 'Classic mini pie filled with spiced apples and topped with a sweet, buttery streusel crumble and freshly made toffee sauce.',
     image: '/images/pie_apple.jpeg',
     isFeatured: true
   },
@@ -243,7 +325,7 @@ export const MENU_DATA: MenuItem[] = [
     category: 'muffins',
     price: 55,
     unit: 'Pc',
-    description: 'Decadent chocolate muffin loaded with both dark and milk chocolate chips.',
+    description: 'Decadent chocolate muffin loaded with both dark and milk chocolate chips. Available with Streusel or Chocochip.',
     image: '/images/muffin_chocolate_close.jpeg',
     isFeatured: true
   },
@@ -256,6 +338,16 @@ export const MENU_DATA: MenuItem[] = [
     description: 'Soft and moist bakery-style muffin bursting with fresh sweet blueberries.',
     image: '/images/muffin_almond.jpeg',
     isFeatured: true
+  },
+  {
+    id: 'muffin-banana',
+    name: 'Banana Muffin',
+    category: 'muffins',
+    price: 50,
+    unit: 'Pc',
+    description: 'Soft and moist banana muffins with a touch of cinnamon and almond shavings on top.',
+    image: '/images/muffin_almond.jpeg',
+    isFeatured: false
   },
   {
     id: 'muffin-banana-choc',
@@ -388,7 +480,7 @@ export const MENU_DATA: MenuItem[] = [
     name: 'Sprouted Ragi Whole Wheat Jaggery',
     category: 'health-treats',
     price: 200,
-    unit: 'Loaf',
+    unit: 'Box',
     description: 'Nutritious cake baked with organic sprouted ragi, whole wheat flour, and sweetened naturally with iron-rich jaggery.',
     image: '/images/health_ragi_jaggery.jpeg',
     isFeatured: false
@@ -415,11 +507,11 @@ export const MENU_DATA: MenuItem[] = [
   },
   {
     id: 'health-gf-cranberry',
-    name: 'Gluten-Free Cranberry Chocochip Coconut',
+    name: 'Gluten-Free Cookies',
     category: 'health-treats',
     price: 210,
     unit: 'Box',
-    description: 'A allergen-friendly powerhouse packed with tart cranberries, dark chocolate chips, and shredded coconut.',
+    description: 'Available in 3 flavors: Chocochip, Cranberry, Coconut.',
     image: '/images/health_gf_cranberry.jpeg  ',
     isFeatured: false
   },
@@ -447,22 +539,12 @@ export const MENU_DATA: MenuItem[] = [
   },
   {
     id: 'tea-zebra',
-    name: 'Zebra Tea Cake',
-    category: 'tea-cakes',
-    price: 300,
-    unit: 'Loaf',
-    description: 'Elegantly striped marble cake with alternating layers of vanilla and chocolate sponge.',
-    image: '/images/tea_zebra.jpeg',
-    isFeatured: false
-  },
-  {
-    id: 'tea-madeira',
-    name: 'Madeira Cake',
+    name: 'Zebra Cake',
     category: 'tea-cakes',
     price: 375,
-    unit: 'Loaf',
-    description: 'Classic British sponge cake with a firm yet light texture, subtly flavored with lemon zest.',
-    image: '/images/tea_madeira.jpeg',
+    unit: 'Half Kg',
+    description: 'Elegantly striped marble cake with alternating layers of vanilla and chocolate sponge.',
+    image: '/images/tea_zebra.jpeg',
     isFeatured: false
   },
 

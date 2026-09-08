@@ -44,9 +44,9 @@ export const Hero: React.FC<HeroProps> = ({ startAnimation }) => {
     >
       {/* Background Image with Dark Overlay - Animating Zoom + 3D Mouse Parallax */}
       <motion.div 
-        initial={{ scale: 1.15, opacity: 0 }}
-        animate={startAnimation ? { scale: 1.08, opacity: 1 } : { scale: 1.15, opacity: 0 }}
-        transition={{ duration: 6, ease: [0.16, 1, 0.3, 1] }}
+        initial={{ scale: 1.02, opacity: 0 }}
+        animate={startAnimation ? { scale: 1, opacity: 1 } : { scale: 1.02, opacity: 0 }}
+        transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
         style={{
           x,
           y,

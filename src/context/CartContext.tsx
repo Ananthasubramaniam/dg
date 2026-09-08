@@ -23,6 +23,7 @@ interface CartContextType {
   triggerWhatsAppOrder: () => void;
   activeMenuCategory: string;
   setActiveMenuCategory: (category: string) => void;
+  toastMessage: string | null;
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -32,6 +33,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [isCartOpen, setCartOpen] = useState(false);
   const [activeDetailsProduct, setActiveDetailsProduct] = useState<MenuItem | null>(null);
   const [activeMenuCategory, setActiveMenuCategory] = useState<string>('cakes');
+  const [toastMessage, setToastMessage] = useState<string | null>(null);
 
   // Load cart from localStorage on mount
   useEffect(() => {
@@ -66,6 +68,11 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
       }
       return [...prevCart, { product, quantity }];
     });
+
+    setToastMessage(`"${product.name}" added to cart`);
+    setTimeout(() => {
+      setToastMessage(null);
+    }, 2500);
   };
 
   const updateQuantity = (productId: string, quantity: number) => {
@@ -135,6 +142,7 @@ Thank you.`;
         triggerWhatsAppOrder,
         activeMenuCategory,
         setActiveMenuCategory,
+        toastMessage,
       }}
     >
       {children}

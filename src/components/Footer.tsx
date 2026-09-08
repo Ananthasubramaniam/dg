@@ -23,7 +23,7 @@ const InstagramIcon: React.FC<{ size?: number; className?: string }> = ({ size =
 );
 
 export const Footer: React.FC = () => {
-  const { cartCount, setCartOpen } = useCart();
+  const { cartCount, cartTotal, setCartOpen } = useCart();
   const [showScrollTop, setShowScrollTop] = useState(false);
 
   useEffect(() => {
@@ -68,8 +68,12 @@ export const Footer: React.FC = () => {
             {/* About Block */}
             <div className="footer-col about-col">
               <a href="#home" className="footer-logo">
-                <span className="logo-dessert">Dessert</span>
-                <span className="logo-groove">Groove</span>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/images/logo.png" alt="Dessert Groove Logo" className="header-logo-img" style={{ height: '36px' }} />
+                <span className="logo-text-wrapper">
+                  <span className="logo-dessert">Dessert</span>
+                  <span className="logo-groove">Groove</span>
+                </span>
               </a>
               <p className="about-text">
                 Crafting premium, bespoke cakes, gourmet dessert jars, and overnight fermented artisan sourdough breads. Every order is customized and baked fresh in Pune.
@@ -105,8 +109,20 @@ export const Footer: React.FC = () => {
                   <a href="mailto:subhaganesan@gmail.com">subhaganesan@gmail.com</a>
                 </li>
                 <li className="contact-detail-item">
-                  <Clock size={18} className="gold-text shrink-0" />  
-                  <span>Pre-order: 24/7 • Kitchen: 10 AM - 8 PM</span>
+                  <Clock size={18} className="gold-text shrink-0" style={{ marginTop: '4px' }} />  
+                  <div>
+                    <strong style={{ color: 'var(--color-cream)', display: 'block', marginBottom: '4px' }}>Business Timings:</strong>
+                    <div style={{ fontSize: '0.85rem', lineHeight: '1.6' }}>
+                      <div><strong>Monday:</strong> 10:30 AM to 3:00 PM, 4:00 PM to 7:30 PM</div>
+                      <div><strong>Tuesday:</strong> 10:30 AM to 3:00 PM, 4:00 PM to 7:30 PM</div>
+                      <div><strong>Wednesday:</strong> 10:30 AM to 3:00 PM, 4:00 PM to 7:30 PM</div>
+                      <div><strong>Thursday:</strong> 10:30 AM to 3:00 PM</div>
+                      <div><strong>Friday:</strong> 10:30 AM to 3:00 PM, 4:00 PM to 7:30 PM</div>
+                      <div><strong>Saturday:</strong> 10:30 AM to 3:00 PM, 4:00 PM to 7:30 PM</div>
+                      <div style={{ marginTop: '4px', fontStyle: 'italic', opacity: 0.85 }}>Our timings are subject to change on Weekends, depending upon the bookings committed for the said day.</div>
+                      <div style={{ marginTop: '4px' }}><strong>Sunday:</strong> Shop is closed. (We work on Sunday, if we have order to deliver)</div>
+                    </div>
+                  </div>
                 </li>
               </ul>
             </div>
@@ -147,8 +163,8 @@ export const Footer: React.FC = () => {
           className="sticky-cart-btn flex-center card-hover"
           aria-label="View shopping cart"
         >
-          <ShoppingBag size={20} />
-          <span className="sticky-cart-count flex-center">{cartCount}</span>
+          <ShoppingBag size={18} />
+          <span>{cartCount} {cartCount === 1 ? 'item' : 'items'} · ₹{cartTotal} · View Cart</span>
         </button>
       )}
 

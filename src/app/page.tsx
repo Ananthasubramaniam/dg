@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
-import FeaturedProducts from '../components/FeaturedProducts';
 import BehindDessertGroove from '../components/BehindDessertGroove';
 import CustomCakes from '../components/CustomCakes';
 import QuickMenu from '../components/QuickMenu';
@@ -33,7 +32,6 @@ export default function Home() {
         <main>
           <Hero startAnimation={isLoaded} />
           <BehindDessertGroove />
-          <FeaturedProducts />
           <QuickMenu />
           <CustomCakes />
           <Gallery />
