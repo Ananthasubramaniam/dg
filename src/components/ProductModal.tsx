@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useCart } from '../context/CartContext';
 import { X, Minus, Plus, ShoppingBag } from 'lucide-react';
+import PizzaBuilderModal from './PizzaBuilderModal';
 
 export const ProductModal: React.FC = () => {
   const { activeDetailsProduct, setActiveDetailsProduct, addToCart } = useCart();
@@ -17,6 +18,16 @@ export const ProductModal: React.FC = () => {
   }
 
   if (!activeDetailsProduct) return null;
+
+  // Render dedicated interactive Pizza Builder when pizza category is selected
+  if (activeDetailsProduct.category === 'pizza') {
+    return (
+      <PizzaBuilderModal
+        initialProduct={activeDetailsProduct}
+        onClose={() => setActiveDetailsProduct(null)}
+      />
+    );
+  }
 
   const product = activeDetailsProduct;
 

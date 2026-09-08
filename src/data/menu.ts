@@ -174,6 +174,16 @@ export const MENU_DATA: MenuItem[] = [
     image: '/images/cake_pineapple.jpeg',
     isFeatured: false
   },
+  {
+    id: 'cake-orange-vanilla',
+    name: 'Orange (vanilla sponge flavor)',
+    category: 'cakes',
+    price: 575,
+    unit: 'Half Kg',
+    description: 'Fluffy vanilla sponge infused with fresh citrus orange compote and light vanilla buttercream frosting.',
+    image: '/images/cake_lemon_blueberry.jpeg',
+    isFeatured: false
+  },
   // --- CRAFT CHOCOLATES ---
   {
     id: 'choc-orange-sea-salt',
@@ -544,6 +554,16 @@ export const MENU_DATA: MenuItem[] = [
     price: 375,
     unit: 'Half Kg',
     description: 'Elegantly striped marble cake with alternating layers of vanilla and chocolate sponge.',
+    image: '/images/tea_zebra.jpeg',
+    isFeatured: false
+  },
+  {
+    id: 'tea-madeira-egg',
+    name: 'Madeira Cake (With Egg)',
+    category: 'tea-cakes',
+    price: 375,
+    unit: 'Half Kg',
+    description: 'Classic rich butter cake baked with fresh eggs, lightly flavored with lemon zest. A traditional tea-time essential.',
     image: '/images/tea_zebra.jpeg',
     isFeatured: false
   },

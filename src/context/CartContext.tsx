@@ -105,7 +105,10 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
     
     let itemsText = '';
     cart.forEach((item) => {
-      itemsText += `* ${item.product.name} x ${item.quantity} (₹${item.product.price * item.quantity})\n`;
+      itemsText += `\n• *${item.product.name}* x ${item.quantity} — ₹${item.product.price * item.quantity}`;
+      if (item.product.description) {
+        itemsText += `\n  _${item.product.description}_`;
+      }
     });
 
     const message = `Hi Subha,

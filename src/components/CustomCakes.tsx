@@ -17,7 +17,7 @@ export const CustomCakes: React.FC = () => {
       title: 'Birthday Cakes',
       icon: <Calendar size={20} className="gold-text" />,
       description: 'Make birthdays unforgettable with personalized designs, custom toppings, and flavors customized specifically for the celebrant.',
-      imageUrl: '/images/cake_black_forest.jpeg'
+      imageUrl: '/images/cake_chocolate_cherry.jpeg'
     },
     {
       title: 'Theme Cakes',
@@ -81,7 +81,7 @@ export const CustomCakes: React.FC = () => {
                 <img 
                   src={cat.imageUrl} 
                   alt={cat.title} 
-                  className="showcase-card-img"
+                  className={`showcase-card-img ${cat.title === 'Anniversary Cakes' ? 'anniversary-showcase-crop' : ''}`}
                   loading="lazy"
                 />
                 <div className="showcase-img-overlay flex-center">

@@ -87,6 +87,11 @@ export const CartDrawer: React.FC = () => {
                       {/* Details */}
                       <div className="cart-item-info">
                         <h4 className="cart-item-name">{item.product.name}</h4>
+                        {item.product.description && (
+                          <p className="cart-item-desc-text" style={{ fontSize: '0.78rem', color: 'var(--color-text-muted)', margin: '2px 0 4px 0', lineHeight: 1.3 }}>
+                            {item.product.description}
+                          </p>
+                        )}
                         <span className="cart-item-price">₹{item.product.price} each</span>
                         
                         <div className="cart-item-controls">

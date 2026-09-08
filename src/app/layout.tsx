@@ -18,16 +18,34 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.dessertgroove.com"),
   title: "Dessert Groove | Premium Artisan Bakery & Customized Cakes",
   description: "Freshly baked artisan cakes, customized fondant cakes, cupcakes, cookies, and breads by Dessert Groove. Handcrafted with premium ingredients. Pre-order only in Pune.",
   keywords: "bakery, customized cakes, fondant cakes, artisan bread, cupcakes, cookies, dessert groove, pune, chocolate ganache, tea cakes",
+  alternates: {
+    canonical: "https://www.dessertgroove.com",
+  },
   openGraph: {
     title: "Dessert Groove | Premium Artisan Bakery & Customized Cakes",
     description: "Pre-order customized cakes, cupcakes, artisan breads, and premium desserts online. Crafted with love, delivered in Pune.",
     type: "website",
     locale: "en_IN",
-    url: "https://dessertgroove.in", // Placeholder domain
+    url: "https://www.dessertgroove.com",
     siteName: "Dessert Groove",
+    images: [
+      {
+        url: "https://www.dessertgroove.com/images/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Dessert Groove Micro Bakery Pune",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Dessert Groove | Premium Artisan Bakery & Customized Cakes",
+    description: "Pre-order customized cakes, cupcakes, artisan breads, and premium desserts online in Pune.",
+    images: ["https://www.dessertgroove.com/images/logo.png"],
   },
 };
 

@@ -136,7 +136,7 @@ export const Footer: React.FC = () => {
               &copy; {new Date().getFullYear()} Dessert Groove Bakery. Handcrafted with love in Pune.
             </p>
             <p className="developer-tag">
-              Designed with premium aesthetics.
+              Baked fresh from scratch in Wakad, Pune · 100% Eggless options available
             </p>
           </div>
         </div>

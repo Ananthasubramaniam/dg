@@ -238,24 +238,28 @@ button {
 }
 .logo-text-wrapper {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 6px;
   line-height: 1;
 }
 .logo-dessert {
   font-family: var(--font-serif);
-  font-size: 1.6rem;
+  font-size: 1.55rem;
   color: var(--color-chocolate);
   font-weight: 600;
   letter-spacing: -0.5px;
 }
+.footer-logo .logo-dessert {
+  color: var(--color-cream);
+}
 .logo-groove {
   font-family: var(--font-sans);
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   color: var(--color-caramel);
   text-transform: uppercase;
   font-weight: 800;
-  letter-spacing: 3px;
-  margin-top: 1px;
+  letter-spacing: 2px;
 }
 .desktop-nav {
   display: flex;
@@ -2408,7 +2412,9 @@ button {
 .about-col .footer-logo {
   margin-bottom: 20px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
   line-height: 1;
 }
 .footer-logo .logo-dessert {
@@ -3171,6 +3177,304 @@ button {
   font-weight: 700;
   font-size: 0.82rem;
   letter-spacing: 0.5px;
+}
+
+/* Custom Showcase Crop for Anniversary Cakes */
+.anniversary-showcase-crop {
+  object-position: center 30% !important;
+  transform: scale(1.15) !important;
+}
+
+/* Quick Menu Category Note Contrast Fix */
+.quick-category-note {
+  color: var(--color-caramel-dark, #966f36) !important;
+  font-weight: 600 !important;
+}
+
+/* -------------------------------------------------------------
+   WORLD CLASS PIZZA BUILDER STYLES
+------------------------------------------------------------- */
+.pizza-builder-wrapper {
+  max-width: 900px !important;
+  width: 95vw !important;
+}
+
+.pizza-builder-box {
+  max-height: 90vh !important;
+  overflow-y: auto !important;
+  padding: 32px !important;
+  background-color: var(--color-cream) !important;
+  border: 1px solid var(--color-cream-dark) !important;
+}
+
+.pizza-builder-header {
+  margin-bottom: 20px;
+}
+
+.pizza-badge {
+  background-color: rgba(184, 142, 82, 0.15);
+  border: 1px solid rgba(184, 142, 82, 0.4);
+  color: var(--color-caramel-dark);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.pizza-title {
+  font-size: 2.2rem;
+  color: var(--color-chocolate);
+  margin-top: 8px;
+  margin-bottom: 6px;
+}
+
+.pizza-subtitle {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+}
+
+.scratch-guarantee-banner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background-color: var(--color-chocolate);
+  color: var(--color-cream);
+  padding: 16px 20px;
+  border-radius: var(--border-radius-md);
+  margin-bottom: 28px;
+  border: 1px solid rgba(184, 142, 82, 0.3);
+  box-shadow: var(--shadow-sm);
+}
+
+.scratch-banner-icon {
+  background-color: rgba(184, 142, 82, 0.2);
+  color: var(--color-gold);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.scratch-banner-title {
+  font-size: 1rem;
+  font-family: var(--font-serif);
+  color: var(--color-gold-light);
+  margin-bottom: 2px;
+}
+
+.scratch-banner-desc {
+  font-size: 0.85rem;
+  color: rgba(250, 246, 240, 0.85);
+  line-height: 1.45;
+}
+
+.pizza-builder-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin-bottom: 28px;
+}
+
+@media (max-width: 768px) {
+  .pizza-builder-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .pizza-builder-box {
+    padding: 20px 16px !important;
+  }
+}
+
+.builder-section-label {
+  font-size: 1.1rem;
+  color: var(--color-chocolate);
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.builder-section-subtext {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+}
+
+.size-selector-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.size-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 14px 10px;
+  border-radius: var(--border-radius-md);
+  background-color: var(--color-white);
+  border: 2px solid var(--color-cream-dark);
+  transition: all var(--transition-fast);
+}
+
+.size-card.active {
+  border-color: var(--color-caramel);
+  background-color: var(--color-gold-ultra-light);
+  box-shadow: 0 4px 14px rgba(184, 142, 82, 0.15);
+}
+
+.size-card-title {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-chocolate);
+  margin-bottom: 4px;
+}
+
+.size-card-price {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-caramel-dark);
+}
+
+.base-selector-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.base-card {
+  text-align: left;
+  padding: 14px 16px;
+  border-radius: var(--border-radius-md);
+  background-color: var(--color-white);
+  border: 2px solid var(--color-cream-dark);
+  transition: all var(--transition-fast);
+}
+
+.base-card.active {
+  border-color: var(--color-caramel);
+  background-color: var(--color-gold-ultra-light);
+  box-shadow: 0 4px 14px rgba(184, 142, 82, 0.15);
+}
+
+.base-icon {
+  font-size: 1.4rem;
+}
+
+.base-check {
+  color: var(--color-caramel-dark);
+}
+
+.base-title {
+  display: block;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--color-chocolate);
+  margin-top: 6px;
+  margin-bottom: 4px;
+}
+
+.base-desc {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  line-height: 1.35;
+}
+
+.toppings-count-tag {
+  background-color: var(--color-chocolate);
+  color: var(--color-gold-light);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-left: auto;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.toppings-chips-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.topping-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 30px;
+  background-color: var(--color-white);
+  border: 1.5px solid var(--color-cream-dark);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-text-dark);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.topping-chip.selected {
+  background-color: var(--color-chocolate);
+  color: var(--color-cream);
+  border-color: var(--color-chocolate);
+  box-shadow: 0 4px 12px rgba(44, 27, 24, 0.15);
+}
+
+.topping-chip-price {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-caramel);
+}
+
+.topping-chip.selected .topping-chip-price {
+  color: var(--color-gold-light);
+}
+
+.topping-chip-check {
+  color: var(--color-gold);
+}
+
+.pizza-builder-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-cream-dark);
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.pizza-price-summary {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.pizza-total-label {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.pizza-total-amount {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--color-chocolate);
+  font-family: var(--font-serif);
+}
+
+.pizza-unit-detail {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+}
+
+.pizza-action-buttons {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.pizza-add-cart-btn {
+  padding: 14px 28px !important;
 }
 
 

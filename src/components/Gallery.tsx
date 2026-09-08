@@ -98,7 +98,7 @@ export const Gallery: React.FC = () => {
       category: 'breads',
       categoryLabel: 'Breads',
       title: 'Overnight Fermented Artisan Boule',
-      image: '/images/bread_artisan_boule.jpeg'
+      image: '/images/bread_braided.jpeg'
     },
     {
       id: 'gal-9',
